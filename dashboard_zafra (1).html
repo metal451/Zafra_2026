@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zafra 2026 - Agropecuaria El Bibosi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F7F2;
+            color: #1A3626;
+        }
+        .text-dark-green { color: #1A3626; }
+        .text-medium-green { color: #2D5A40; }
+        .text-light-green { color: #4A825C; }
+        .bg-dark-green { background-color: #1A3626; }
+        .bg-card-beige { background-color: #FDF9EC; }
+        .bg-card-light-green { background-color: #E6F0E8; }
+        .bg-accent-yellow { background-color: #FDE68A; }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .circular-chart { display: block; margin: 0 auto; max-width: 80%; max-height: 250px; }
+        .circle-bg { fill: none; stroke: #2D5A40; stroke-width: 2.5; }
+        .circle { fill: none; stroke-width: 2.5; stroke-linecap: round; animation: progress 1s ease-out forwards; }
+        @keyframes progress { 0% { stroke-dasharray: 0 100; } }
+        
+        .curved-bg { position: relative; overflow: hidden; }
+        .curved-bg::before {
+            content: ''; position: absolute; top: 0; right: 0; width: 150%; height: 150%;
+            background-color: #2D5A40; border-radius: 50%; transform: translate(30%, -20%); z-index: 0;
+        }
+        .curved-bg > * { position: relative; z-index: 1; }
+
+        /* ===== Tokens de estado epistémico (vocabulario_visual.md) ===== */
+        .estado-confirmado { opacity: 1; }
+        .estado-estimado { opacity: 0.75; border-bottom: 1px dashed currentColor; }
+        .estado-provisional { color: #92702A; }
+        .estado-pendiente { color: #9CA3AF; font-style: italic; }
+        .estado-sindato { color: #D1D5DB; }
+        .estado-error { color: #DC2626; font-weight: 700; }
+        .estado-en-proceso { color: #2563EB; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 md:p-8">
+
+    <!-- DEV: interruptor Vacío/Demo — borrar este bloque entero al conectar datos reales -->
+    <div class="fixed bottom-4 left-4 z-50 bg-white rounded-full shadow-lg border border-gray-200 p-1 flex gap-1 text-xs font-semibold" data-dev-only="true">
+        <button type="button" data-fuente-btn="vacio" onclick="cambiarFuente('vacio')" class="px-3 py-1.5 rounded-full transition-colors">Vacío</button>
+        <button type="button" data-fuente-btn="demo" onclick="cambiarFuente('demo')" class="px-3 py-1.5 rounded-full transition-colors">Demo</button>
+    </div>
+    <!-- FIN DEV -->
+
+
+    <!-- Header / Navigation -->
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center border border-green-200">
+                <svg class="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            </div>
+            <div>
+                <h1 class="text-xl font-bold text-dark-green leading-tight">Agropecuaria El Bibosi</h1>
+                <p class="text-sm text-gray-500">Control de cosecha</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 text-sm font-medium">
+            <nav class="flex gap-4">
+                <a href="#" data-nav-btn="resumen" onclick="mostrarVista('resumen'); return false;" class="text-green-700 font-bold border-b-2 border-green-700 pb-1">Resumen</a>
+                <a href="#" data-nav-btn="lotes" onclick="mostrarVista('lotes'); return false;" class="text-gray-500 hover:text-green-700 pb-1">Lotes</a>
+            </nav>
+            <div class="flex items-center gap-2 bg-yellow-100 text-yellow-800 px-3 py-1.5 rounded-full text-xs font-semibold">
+                <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+                <span data-field="estado_sincronizacion">—</span>
+            </div>
+            <button type="button" onclick="cargarContrato()" class="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full shadow-sm hover:bg-gray-50 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                Actualizar
+            </button>
+        </div>
+    </header>
+
+    <!-- Section 1: Acumulado Histórico -->
+    <div class="mb-12" data-vista="resumen">
+        <div class="flex justify-between items-end mb-4">
+            <div>
+                <p class="text-xs font-bold text-green-700 tracking-wider mb-1 uppercase">ZAFRA 2026 • ACUMULADO HISTÓRICO</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-dark-green tracking-tight">Acumulado hasta la fecha</h2>
+            </div>
+            <div class="text-right">
+                <p class="text-xs text-gray-500">Última actualización</p>
+                <p class="text-sm font-bold text-dark-green" data-field="ultima_actualizacion">—</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+
+            <!-- Main Progress Card -->
+            <div class="lg:col-span-5 bg-dark-green text-white rounded-3xl p-6 curved-bg shadow-lg flex flex-col justify-between relative overflow-hidden h-64">
+                <div class="z-10">
+                    <p class="text-sm font-bold text-green-200 tracking-wider uppercase mb-2">Avance Acumulado</p>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-6xl font-bold tracking-tighter" data-field="avance_pct">—</span>
+                        <span class="text-2xl font-medium text-green-200">%</span>
+                    </div>
+                    <p class="text-base text-green-100 mt-2"><span class="font-bold text-white" data-field="ha_cosechadas">—</span> ha cosechadas de <span data-field="ha_programadas">—</span> ha programadas.</p>
+                    <p class="text-sm text-green-200/80 mt-1" data-field="lotes_en_proceso_texto">—</p>
+                </div>
+
+                <div class="absolute bottom-4 right-4 w-32 h-32 z-10">
+                     <svg viewBox="0 0 36 36" class="circular-chart text-yellow-400 w-full h-full">
+                        <path class="circle-bg"
+                          d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle" data-field="avance_gauge_path"
+                          stroke-dasharray="0, 100"
+                          d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                          stroke="currentColor"
+                        />
+                        <text x="18" y="14" class="text-[4px] font-bold fill-white uppercase text-center" text-anchor="middle">Superficie</text>
+                        <text x="18" y="21" class="text-[7px] font-bold fill-white text-center" text-anchor="middle" data-field="ha_programadas_gauge">—</text>
+                        <text x="18" y="26" class="text-[4px] font-medium fill-green-200 text-center" text-anchor="middle">hectáreas</text>
+                      </svg>
+                </div>
+            </div>
+
+            <!-- Stats Grid Right Side -->
+            <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-gray-500 tracking-wider uppercase mb-1">Toneladas Estimadas</p>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="toneladas_estimadas_total">—</span>
+                        <span class="text-base font-medium text-gray-500">t</span>
+                    </div>
+                    <div class="mt-auto flex flex-col gap-1 text-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-1 text-gray-500">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-600"></span> Confirmadas
+                            </div>
+                            <span class="font-bold text-dark-green" data-field="toneladas_confirmadas">—</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-1 text-gray-500">
+                                <span class="w-1.5 h-1.5 rounded-full bg-yellow-400"></span> Por confirmar
+                            </div>
+                            <span class="font-bold text-dark-green" data-field="toneladas_por_confirmar">—</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card-light-green rounded-3xl p-6 card-shadow border border-green-50 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-green-800 tracking-wider uppercase mb-1">Quintales Acumulados</p>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="quintales_acumulados">—</span>
+                        <span class="text-base font-medium text-green-800">qq</span>
+                    </div>
+                </div>
+
+                <div class="bg-card-beige rounded-3xl p-6 card-shadow border border-yellow-50 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-yellow-800 tracking-wider uppercase mb-1">Sacarosa Promedio</p>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="sacarosa_promedio">—</span>
+                        <span class="text-base font-medium text-yellow-800">%</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-gray-500 tracking-wider uppercase mb-1">Rendimiento Medio</p>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="rendimiento_medio">—</span>
+                        <span class="text-base font-medium text-gray-500">t/ha</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Resumen Diario -->
+    <div class="mb-8" data-vista="resumen">
+        <p class="text-xs font-bold text-green-700 tracking-wider mb-1 uppercase">REGISTRO POR FECHA • ÚLTIMOS 7 DÍAS</p>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 gap-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-dark-green tracking-tight">Resumen diario</h2>
+            <div class="flex items-center gap-6">
+                <button type="button" onclick="mostrarVista('lotes')" class="bg-dark-green text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-green-800 transition-colors flex items-center gap-2">
+                    Ver estado de lotes <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+                <div class="text-right">
+                    <p class="text-xs text-gray-500">Toneladas del periodo</p>
+                    <p class="text-xl font-bold text-dark-green" data-field="toneladas_periodo">—</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <!-- Chart Container -->
+            <div class="lg:col-span-2 bg-white rounded-3xl p-6 card-shadow border border-gray-100 min-h-[400px] flex flex-col relative">
+                <div class="absolute top-8 right-12 z-10 text-xs font-bold text-dark-green" data-field="ultimo_dia_valor">—</div>
+                <div class="flex-grow w-full relative">
+                    <canvas id="dailyYieldChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Day Selected Details Panel -->
+            <div class="lg:col-span-1 bg-card-beige rounded-3xl p-6 card-shadow border border-yellow-50 flex flex-col gap-4">
+                <div>
+                    <p class="text-sm font-bold text-yellow-800 tracking-wider uppercase mb-1">DÍA SELECCIONADO</p>
+                    <p class="text-xl font-bold text-dark-green" data-field="dia_seleccionado_fecha">—</p>
+                </div>
+
+                <div>
+                    <div class="flex items-baseline gap-1 mb-1">
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="dia_seleccionado_total">—</span>
+                        <span class="text-lg font-medium text-yellow-800">t</span>
+                    </div>
+                    <p class="text-sm text-yellow-800/70">Toneladas estimadas totales</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-2">
+                    <div class="bg-white/60 rounded-xl p-3">
+                        <p class="text-lg font-bold text-dark-green" data-field="dia_seleccionado_confirmadas">—</p>
+                        <p class="text-xs text-gray-500">confirmadas</p>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-3">
+                        <p class="text-lg font-bold text-dark-green" data-field="dia_seleccionado_por_confirmar">—</p>
+                        <p class="text-xs text-gray-500">por confirmar</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                    <div class="bg-white/60 rounded-xl p-3 text-center">
+                        <p class="text-xs text-gray-500 leading-tight mb-1 h-6 flex items-center justify-center">Camiones<br>cargados</p>
+                        <p class="text-2xl font-bold text-dark-green" data-field="dia_seleccionado_camiones_cargados">—</p>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-3 text-center">
+                        <p class="text-xs text-gray-500 leading-tight mb-1 h-6 flex items-center justify-center">Chatas cargadas</p>
+                        <p class="text-2xl font-bold text-dark-green" data-field="dia_seleccionado_chatas_cargadas">—</p>
+                    </div>
+                </div>
+
+                <div class="bg-[#E6E8DB] rounded-xl p-4 mt-2">
+                    <p class="text-xs text-gray-500 mb-1">Cosechando actualmente</p>
+                    <p class="text-lg font-bold text-dark-green mb-1" data-field="dia_seleccionado_lotes">—</p>
+                    <p class="text-xs text-gray-400" data-field="dia_seleccionado_grupo">—</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-2 flex-grow">
+                    <div class="bg-white/60 rounded-xl p-3 flex flex-col justify-between">
+                        <p class="text-xs text-gray-500">Sacarosa promedio</p>
+                        <p class="text-2xl font-bold text-dark-green" data-field="dia_seleccionado_sacarosa">—</p>
+                    </div>
+                    <div class="bg-white/60 rounded-xl p-3 flex flex-col justify-between">
+                        <div>
+                            <p class="text-xs text-gray-500">Quintales totales</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-dark-green" data-field="dia_seleccionado_quintales">—</p>
+                            <p class="text-[10px] text-gray-400 mt-1">Calculados sobre toneladas confirmadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Lotes -->
+    <div class="mb-8" data-vista="lotes" hidden>
+        <p class="text-xs font-bold text-green-700 tracking-wider mb-1 uppercase">ESTADO DE LOTES</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-dark-green tracking-tight mb-6">Lotes de la zafra</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-card-light-green rounded-3xl p-6 card-shadow border border-green-50">
+                <div class="flex justify-between items-start mb-3">
+                    <p class="text-sm font-bold text-green-800 tracking-wider uppercase">Cortes<br>Terminados</p>
+                    <span class="text-base font-bold text-dark-green bg-white border border-green-200 rounded-lg px-3 py-1.5" data-field="lotes_terminados_ha">—</span>
+                </div>
+                <p class="text-4xl font-bold text-dark-green"><span data-field="lotes_terminados_cantidad">—</span> lotes</p>
+                <p class="text-sm mt-2 text-green-800/80 leading-tight" data-field="lotes_terminados_nombres"></p>
+            </div>
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-blue-100">
+                <div class="flex justify-between items-start mb-3">
+                    <p class="text-sm font-bold text-blue-700 tracking-wider uppercase">En proceso<br>de cosecha</p>
+                    <span class="text-base font-bold text-blue-700 bg-white border border-blue-200 rounded-lg px-3 py-1.5" data-field="lotes_en_proceso_ha">—</span>
+                </div>
+                <p class="text-4xl font-bold text-blue-700"><span data-field="lotes_en_proceso_cantidad">—</span> lote</p>
+                <p class="text-sm mt-2 text-blue-700/80 leading-tight" data-field="lotes_en_proceso_nombres"></p>
+            </div>
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100">
+                <div class="flex justify-between items-start mb-3">
+                    <p class="text-sm font-bold text-gray-500 tracking-wider uppercase">Lotes<br>Pendientes</p>
+                    <span class="text-base font-bold text-dark-green bg-white border border-gray-200 rounded-lg px-3 py-1.5" data-field="lotes_pendientes_ha">—</span>
+                </div>
+                <p class="text-4xl font-bold text-dark-green"><span data-field="lotes_pendientes_cantidad">—</span> lotes</p>
+                <p class="text-sm mt-2 text-gray-500 leading-tight" data-field="lotes_pendientes_nombres"></p>
+            </div>
+        </div>
+
+        <div id="grid-lotes" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+
+    <!-- Footer Status -->
+    <div class="mt-auto bg-card-light-green border border-green-100 rounded-2xl p-4 flex justify-between items-center">
+        <div class="flex items-center gap-2 text-sm font-medium text-dark-green">
+            <div class="w-3 h-3 rounded-full bg-dark-green flex items-center justify-center" data-field="alerta_dot">
+                <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+            </div>
+            ¿Está todo funcionando?
+        </div>
+        <div class="flex items-center gap-2">
+            <span class="text-sm font-bold text-dark-green" data-field="alerta_estado">—</span>
+            <span class="text-xs text-gray-500" data-field="alerta_detalle">—</span>
+        </div>
+    </div>
+
+    <script>
+    // ===================================================================
+    // ZONA VARIABLE — dos fuentes posibles para esta instancia:
+    // CONTRATO_DEMO (datos de muestra) y CONTRATO_VACIO (estado real de
+    // "sin datos", honesto, mientras Apps Script no está conectado).
+    // No debe haber NINGÚN valor de ninguna de las dos tipeado en el HTML.
+    // ===================================================================
+    const CONTRATO_DEMO = {
+      meta: {
+        zafra: 'Bibosi 2026',
+        ultima_actualizacion: '19 jul, 07:35',
+        estado_sincronizacion: 'demo' // 'demo' | 'ok' | 'atrasado'
+      },
+      indicadores_generales: {
+        avance_pct:              { valor: 68.0,   estado: 'confirmado' },
+        ha_cosechadas:            { valor: 848,    estado: 'confirmado' },
+        ha_programadas:           { valor: 1248,   estado: 'confirmado' },
+        toneladas_estimadas_total:{ valor: 81500,  estado: 'estimado' },
+        toneladas_confirmadas:    { valor: 55836,  estado: 'confirmado' },
+        toneladas_por_confirmar:  { valor: 25664,  estado: 'estimado' },
+        quintales_acumulados:     { valor: 42680,  estado: 'provisional' },
+        sacarosa_promedio:        { valor: 12.7,   estado: 'provisional' },
+        rendimiento_medio:        { valor: 65.8,   estado: 'confirmado' }
+      },
+      resumen_diario: {
+        toneladas_periodo: { valor: 9775, estado: 'confirmado' }
+      },
+      historico_diario: [
+        { fecha: '13 jul', toneladas: { total: {valor:1050,estado:'confirmado'}, confirmadas: {valor:800,estado:'confirmado'}, por_confirmar: {valor:250,estado:'estimado'} },
+          camiones_cargados: {valor:26,estado:'confirmado'}, chatas_cargadas: {valor:50,estado:'confirmado'},
+          lote_grupo: {valor:'Lotes 4 y 5',estado:'confirmado'}, sacarosa: {valor:12.5,estado:'confirmado'}, quintales: {valor:810,estado:'confirmado'} },
+        { fecha: '14 jul', toneladas: { total: {valor:1200,estado:'confirmado'}, confirmadas: {valor:950,estado:'confirmado'}, por_confirmar: {valor:250,estado:'estimado'} },
+          camiones_cargados: {valor:31,estado:'confirmado'}, chatas_cargadas: {valor:60,estado:'confirmado'},
+          lote_grupo: {valor:'Lote 5',estado:'confirmado'}, sacarosa: {valor:12.6,estado:'confirmado'}, quintales: {valor:900,estado:'confirmado'} },
+        { fecha: '15 jul', toneladas: { total: {valor:950,estado:'confirmado'}, confirmadas: {valor:700,estado:'confirmado'}, por_confirmar: {valor:250,estado:'estimado'} },
+          camiones_cargados: {valor:23,estado:'confirmado'}, chatas_cargadas: {valor:45,estado:'confirmado'},
+          lote_grupo: {valor:'Lote 6',estado:'confirmado'}, sacarosa: {valor:12.4,estado:'confirmado'}, quintales: {valor:720,estado:'confirmado'} },
+        { fecha: '16 jul', toneladas: { total: {valor:1400,estado:'confirmado'}, confirmadas: {valor:1100,estado:'confirmado'}, por_confirmar: {valor:300,estado:'estimado'} },
+          camiones_cargados: {valor:36,estado:'confirmado'}, chatas_cargadas: {valor:70,estado:'confirmado'},
+          lote_grupo: {valor:'Lotes 6 y 7',estado:'confirmado'}, sacarosa: {valor:12.8,estado:'confirmado'}, quintales: {valor:1050,estado:'confirmado'} },
+        { fecha: '17 jul', toneladas: { total: {valor:1500,estado:'confirmado'}, confirmadas: {valor:1200,estado:'confirmado'}, por_confirmar: {valor:300,estado:'estimado'} },
+          camiones_cargados: {valor:39,estado:'confirmado'}, chatas_cargadas: {valor:75,estado:'confirmado'},
+          lote_grupo: {valor:'Lote 7',estado:'confirmado'}, sacarosa: {valor:12.9,estado:'confirmado'}, quintales: {valor:1120,estado:'confirmado'} },
+        { fecha: '18 jul', toneladas: { total: {valor:1300,estado:'confirmado'}, confirmadas: {valor:1000,estado:'confirmado'}, por_confirmar: {valor:300,estado:'estimado'} },
+          camiones_cargados: {valor:33,estado:'confirmado'}, chatas_cargadas: {valor:65,estado:'confirmado'},
+          lote_grupo: {valor:'Lote 8',estado:'confirmado'}, sacarosa: {valor:12.6,estado:'confirmado'}, quintales: {valor:980,estado:'confirmado'} },
+        { fecha: '19 jul', toneladas: { total: {valor:1120,estado:'estimado'}, confirmadas: {valor:860,estado:'confirmado'}, por_confirmar: {valor:260,estado:'estimado'} },
+          camiones_cargados: {valor:29,estado:'confirmado'}, chatas_cargadas: {valor:56,estado:'confirmado'},
+          lote_grupo: {valor:'Lotes 8 y 9 · Grupo Corte: G03-03',estado:'confirmado'}, sacarosa: {valor:12.7,estado:'provisional'}, quintales: {valor:868,estado:'provisional'} }
+      ],
+      estado_operativo: {
+        estado: 'normal', // 'normal' | 'alerta'
+        titulo: 'Operación normal',
+        detalle: 'Sin alertas activas'
+      },
+      lotes: {
+        resumen: {
+          terminados: { cantidad: 3, ha: 14.51, estado: 'confirmado' },
+          en_proceso: { cantidad: 1, ha: 8.50, estado: 'confirmado' },
+          pendientes: { cantidad: 3, ha: 45.70, estado: 'confirmado' }
+        },
+        items: [
+          { id: 'Lote 1', variedad: 'UCG 90-20', estado_proceso: 'confirmado',
+            superficie_ha: {valor:4.20,estado:'confirmado'}, estado_carga: {valor:'Carga Cerrada',estado:'confirmado'},
+            fecha_inicio: {valor:'2026-07-10',estado:'confirmado'}, fecha_fin: {valor:'2026-07-12',estado:'confirmado'},
+            toneladas_totales: {valor:245.36,estado:'confirmado'}, rendimiento: {valor:58.42,estado:'confirmado'},
+            consumo_diesel: {valor:1.85,estado:'confirmado'}, sacarosa_promedio: {valor:12.8,estado:'confirmado'} },
+          { id: 'Lote 2', variedad: 'UCG 90-20', estado_proceso: 'confirmado',
+            superficie_ha: {valor:4.21,estado:'confirmado'}, estado_carga: {valor:'Carga Cerrada',estado:'confirmado'},
+            fecha_inicio: {valor:'2026-07-13',estado:'confirmado'}, fecha_fin: {valor:'2026-07-15',estado:'confirmado'},
+            toneladas_totales: {valor:271.00,estado:'confirmado'}, rendimiento: {valor:64.37,estado:'confirmado'},
+            consumo_diesel: {valor:1.72,estado:'confirmado'}, sacarosa_promedio: {valor:12.6,estado:'confirmado'} },
+          { id: 'Lote 3', variedad: 'UCG 90-20', estado_proceso: 'confirmado',
+            superficie_ha: {valor:6.10,estado:'confirmado'}, estado_carga: {valor:'Carga Cerrada',estado:'confirmado'},
+            fecha_inicio: {valor:'2026-07-16',estado:'confirmado'}, fecha_fin: {valor:'2026-07-17',estado:'confirmado'},
+            toneladas_totales: {valor:366.00,estado:'confirmado'}, rendimiento: {valor:60.00,estado:'confirmado'},
+            consumo_diesel: {valor:1.80,estado:'confirmado'}, sacarosa_promedio: {valor:12.9,estado:'confirmado'} },
+          { id: 'Lote 4', variedad: 'UCG 90-20', estado_proceso: 'en_proceso',
+            superficie_ha: {valor:8.50,estado:'confirmado'}, estado_carga: {valor:'Cargando',estado:'confirmado'},
+            fecha_inicio: {valor:'2026-07-18',estado:'confirmado'}, fecha_fin: {valor:null,estado:'sin_dato'},
+            toneladas_totales: {valor:210.50,estado:'estimado'}, rendimiento: {valor:null,estado:'pendiente'},
+            consumo_diesel: {valor:null,estado:'pendiente'}, sacarosa_promedio: {valor:null,estado:'pendiente'} },
+          { id: 'Lote 5', variedad: 'UCG 90-20', estado_proceso: 'pendiente',
+            superficie_ha: {valor:14.00,estado:'confirmado'}, estado_carga: {valor:null,estado:'sin_dato'},
+            fecha_inicio: {valor:null,estado:'sin_dato'}, fecha_fin: {valor:null,estado:'sin_dato'},
+            toneladas_totales: {valor:null,estado:'sin_dato'}, rendimiento: {valor:null,estado:'sin_dato'},
+            consumo_diesel: {valor:null,estado:'sin_dato'}, sacarosa_promedio: {valor:null,estado:'sin_dato'} },
+          { id: 'Lote 6', variedad: 'UCG 90-20', estado_proceso: 'pendiente',
+            superficie_ha: {valor:15.20,estado:'confirmado'}, estado_carga: {valor:null,estado:'sin_dato'},
+            fecha_inicio: {valor:null,estado:'sin_dato'}, fecha_fin: {valor:null,estado:'sin_dato'},
+            toneladas_totales: {valor:null,estado:'sin_dato'}, rendimiento: {valor:null,estado:'sin_dato'},
+            consumo_diesel: {valor:null,estado:'sin_dato'}, sacarosa_promedio: {valor:null,estado:'sin_dato'} },
+          { id: 'Lote 7', variedad: 'UCG 90-20', estado_proceso: 'pendiente',
+            superficie_ha: {valor:16.50,estado:'confirmado'}, estado_carga: {valor:null,estado:'sin_dato'},
+            fecha_inicio: {valor:null,estado:'sin_dato'}, fecha_fin: {valor:null,estado:'sin_dato'},
+            toneladas_totales: {valor:null,estado:'sin_dato'}, rendimiento: {valor:null,estado:'sin_dato'},
+            consumo_diesel: {valor:null,estado:'sin_dato'}, sacarosa_promedio: {valor:null,estado:'sin_dato'} }
+        ]
+      }
+    };
+
+    // CONTRATO_VACIO — misma forma exacta que CONTRATO_DEMO, sin datos.
+    // Las fechas quedan (son la estructura del calendario, no una medición);
+    // todo lo demás es null + 'sin_dato'.
+    const FECHAS_SEMANA = ['13 jul','14 jul','15 jul','16 jul','17 jul','18 jul','19 jul'];
+    const CONTRATO_VACIO = {
+      meta: {
+        zafra: 'Bibosi 2026',
+        ultima_actualizacion: null,
+        estado_sincronizacion: 'vacio'
+      },
+      indicadores_generales: {
+        avance_pct:                { valor: null, estado: 'sin_dato' },
+        ha_cosechadas:              { valor: null, estado: 'sin_dato' },
+        ha_programadas:             { valor: null, estado: 'sin_dato' },
+        toneladas_estimadas_total:  { valor: null, estado: 'sin_dato' },
+        toneladas_confirmadas:      { valor: null, estado: 'sin_dato' },
+        toneladas_por_confirmar:    { valor: null, estado: 'sin_dato' },
+        quintales_acumulados:       { valor: null, estado: 'sin_dato' },
+        sacarosa_promedio:          { valor: null, estado: 'sin_dato' },
+        rendimiento_medio:          { valor: null, estado: 'sin_dato' }
+      },
+      resumen_diario: {
+        toneladas_periodo: { valor: null, estado: 'sin_dato' }
+      },
+      historico_diario: FECHAS_SEMANA.map(function (fecha) {
+        return {
+          fecha: fecha,
+          toneladas: {
+            total: { valor: null, estado: 'sin_dato' },
+            confirmadas: { valor: null, estado: 'sin_dato' },
+            por_confirmar: { valor: null, estado: 'sin_dato' }
+          },
+          camiones_cargados: { valor: null, estado: 'sin_dato' },
+          chatas_cargadas: { valor: null, estado: 'sin_dato' },
+          lote_grupo: { valor: null, estado: 'sin_dato' },
+          sacarosa: { valor: null, estado: 'sin_dato' },
+          quintales: { valor: null, estado: 'sin_dato' }
+        };
+      }),
+      estado_operativo: {
+        estado: 'sin_dato',
+        titulo: 'Sin datos operativos',
+        detalle: 'Esperando conexión con Apps Script'
+      },
+      lotes: {
+        resumen: {
+          terminados: { cantidad: null, ha: null, estado: 'sin_dato' },
+          en_proceso: { cantidad: null, ha: null, estado: 'sin_dato' },
+          pendientes: { cantidad: null, ha: null, estado: 'sin_dato' }
+        },
+        items: []
+      }
+    };
+
+    // Fuente actualmente activa. Es la única variable que cambia al
+    // alternar el interruptor — todo lo demás vuelve a leerla desde acá.
+    let CONTRATO = CONTRATO_VACIO;
+
+    // Endpoint del contrato real.
+    // - JSON crudo en GitHub → 'https://raw.githubusercontent.com/usuario/repo/main/datos_zafra.json'
+    // - Web App de Apps Script → la URL que entrega /exec al publicar
+    // Vacío = la página no intenta traer datos reales todavía; se queda en Vacío.
+    const URL_CONTRATO = 'https://raw.githubusercontent.com/metal451/Zafra_2026/main/contrato_real_20260719.json';
+
+    // ===================================================================
+    // ZONA FIJA — MOTOR GENÉRICO. No conoce zafra, ni caña, ni lotes.
+    // Sirve igual para cualquier instrumento que use el mismo vocabulario
+    // de estados epistémicos. No debe editarse por instancia.
+    // ===================================================================
+    const VOCABULARIO_ESTADOS = {
+      confirmado:  'estado-confirmado',
+      estimado:    'estado-estimado',
+      provisional: 'estado-provisional',
+      pendiente:   'estado-pendiente',
+      en_proceso:  'estado-en-proceso',
+      sin_dato:    'estado-sindato',
+      error:       'estado-error'
+    };
+    const TODAS_LAS_CLASES_ESTADO = Object.values(VOCABULARIO_ESTADOS);
+
+    function claseParaEstado(estado) {
+      return VOCABULARIO_ESTADOS[estado] || VOCABULARIO_ESTADOS.sin_dato;
+    }
+
+    function formatearNumero(valor, decimales) {
+      if (valor === null || valor === undefined) return '—';
+      return valor.toLocaleString('es-BO', {
+        minimumFractionDigits: decimales || 0,
+        maximumFractionDigits: decimales || 0
+      });
+    }
+
+    // Igual que formatearNumero, pero para campos de texto (no numéricos).
+    function formatearTexto(valor) {
+      return (valor === null || valor === undefined || valor === '') ? '—' : valor;
+    }
+
+    // Escribe un valor en su ancla estable y aplica el color/textura del estado.
+    // No sabe qué campo es ni qué significa — solo ejecuta.
+    function pintar(campo, texto, estado) {
+      const nodo = document.querySelector('[data-field="' + campo + '"]');
+      if (!nodo) return; // ancla no existe todavía: no rompe nada
+      nodo.textContent = texto;
+      nodo.classList.remove.apply(nodo.classList, TODAS_LAS_CLASES_ESTADO);
+      if (estado) nodo.classList.add(claseParaEstado(estado));
+    }
+
+    // Igual que pintar(), pero para atributos SVG (ej. stroke-dasharray),
+    // que no aceptan textContent.
+    function pintarAtributo(campo, atributo, valor) {
+      const nodo = document.querySelector('[data-field="' + campo + '"]');
+      if (!nodo) return;
+      nodo.setAttribute(atributo, valor);
+    }
+
+    // ===================================================================
+    // ZONA FIJA — RENDER DE ESTA PÁGINA. Conoce los nombres de los campos
+    // del contrato de zafra, pero ningún valor: todo sale de CONTRATO.
+    // ===================================================================
+    function renderEstadoSync(c) {
+      const nodo = document.querySelector('[data-field="estado_sincronizacion"]');
+      if (!nodo) return;
+      const etiquetas = { demo: 'Datos demostrativos', ok: 'Datos al día', atrasado: 'Datos atrasados', vacio: 'Sin datos' };
+      const paleta = {
+        demo:     ['bg-yellow-100', 'text-yellow-800'],
+        ok:       ['bg-green-100', 'text-green-800'],
+        atrasado: ['bg-red-100', 'text-red-800'],
+        vacio:    ['bg-gray-100', 'text-gray-500']
+      };
+      nodo.textContent = etiquetas[c.meta.estado_sincronizacion] || c.meta.estado_sincronizacion;
+      const contenedor = nodo.parentElement;
+      contenedor.classList.remove('bg-yellow-100','text-yellow-800','bg-green-100','text-green-800','bg-red-100','text-red-800','bg-gray-100','text-gray-500');
+      (paleta[c.meta.estado_sincronizacion] || paleta.vacio).forEach(cl => contenedor.classList.add(cl));
+    }
+
+    function renderIndicadoresGenerales(c) {
+      const ind = c.indicadores_generales;
+      pintar('ultima_actualizacion', formatearTexto(c.meta.ultima_actualizacion), c.meta.estado_sincronizacion);
+      pintar('avance_pct', formatearNumero(ind.avance_pct.valor, 1), ind.avance_pct.estado);
+      pintar('ha_cosechadas', formatearNumero(ind.ha_cosechadas.valor, 2), ind.ha_cosechadas.estado);
+      pintar('ha_programadas', formatearNumero(ind.ha_programadas.valor, 2), ind.ha_programadas.estado);
+      pintar('ha_programadas_gauge', formatearNumero(ind.ha_programadas.valor, 0), ind.ha_programadas.estado);
+      pintar('toneladas_estimadas_total', formatearNumero(ind.toneladas_estimadas_total.valor, 0), ind.toneladas_estimadas_total.estado);
+      pintar('toneladas_confirmadas', formatearNumero(ind.toneladas_confirmadas.valor, 0) + ' t', ind.toneladas_confirmadas.estado);
+      pintar('toneladas_por_confirmar', formatearNumero(ind.toneladas_por_confirmar.valor, 0) + ' t', ind.toneladas_por_confirmar.estado);
+      pintar('quintales_acumulados', formatearNumero(ind.quintales_acumulados.valor, 0), ind.quintales_acumulados.estado);
+      pintar('sacarosa_promedio', formatearNumero(ind.sacarosa_promedio.valor, 1), ind.sacarosa_promedio.estado);
+      pintar('rendimiento_medio', formatearNumero(ind.rendimiento_medio.valor, 1), ind.rendimiento_medio.estado);
+      pintarAtributo('avance_gauge_path', 'stroke-dasharray', ind.avance_pct.valor + ', 100');
+      pintar('toneladas_periodo', formatearNumero(c.resumen_diario.toneladas_periodo.valor, 0) + ' t', c.resumen_diario.toneladas_periodo.estado);
+    }
+
+    // NUEVA FUNCIÓN: Extrae qué lote o lotes están en proceso activo y lo presenta en Avance Acumulado.
+    function renderLoteActual(c) {
+      const lotesItems = (c.lotes && c.lotes.items) ? c.lotes.items : [];
+      const enProceso = lotesItems.filter(function(lote) {
+        return lote.estado_proceso === 'en_proceso';
+      });
+
+      let texto = 'Ningún lote en proceso ahora';
+      
+      if (enProceso.length === 1) {
+        texto = 'Cosechando: ' + formatearTexto(enProceso[0].id);
+      } else if (enProceso.length >= 2) {
+        const nombres = enProceso.map(function(l) { return formatearTexto(l.id); });
+        texto = 'Cosechando: ' + nombres.join(', ');
+      }
+
+      pintar('lotes_en_proceso_texto', texto, null);
+    }
+
+    function renderUltimoDia(c) {
+      const ultimo = c.historico_diario[c.historico_diario.length - 1];
+      pintar('ultimo_dia_valor', formatearNumero(ultimo.toneladas.total.valor, 0), ultimo.toneladas.total.estado);
+    }
+
+    function renderDiaSeleccionado(c, indice) {
+      const dia = c.historico_diario[indice];
+      pintar('dia_seleccionado_fecha', dia.fecha, null);
+      pintar('dia_seleccionado_total', formatearNumero(dia.toneladas.total.valor, 0), dia.toneladas.total.estado);
+      pintar('dia_seleccionado_confirmadas', formatearNumero(dia.toneladas.confirmadas.valor, 0) + ' t', dia.toneladas.confirmadas.estado);
+      pintar('dia_seleccionado_por_confirmar', formatearNumero(dia.toneladas.por_confirmar.valor, 0) + ' t', dia.toneladas.por_confirmar.estado);
+      pintar('dia_seleccionado_camiones_cargados', formatearNumero(dia.camiones_cargados.valor, 0), dia.camiones_cargados.estado);
+      pintar('dia_seleccionado_chatas_cargadas', formatearNumero(dia.chatas_cargadas.valor, 0), dia.chatas_cargadas.estado);
+      pintar('dia_seleccionado_lotes', formatearTexto(dia.lote_grupo.valor), dia.lote_grupo.estado);
+      pintar('dia_seleccionado_sacarosa', formatearNumero(dia.sacarosa.valor, 1) + '%', dia.sacarosa.estado);
+      pintar('dia_seleccionado_quintales', formatearNumero(dia.quintales.valor, 0) + ' qq', dia.quintales.estado);
+    }
+
+    function renderEstadoOperativo(c) {
+      const eo = c.estado_operativo;
+      pintar('alerta_estado', eo.titulo, null);
+      pintar('alerta_detalle', eo.detalle, null);
+      const dot = document.querySelector('[data-field="alerta_dot"]');
+      if (dot) {
+        dot.classList.remove('bg-dark-green', 'bg-yellow-500', 'bg-red-600', 'bg-gray-300');
+        const claseDot = eo.estado === 'normal' ? 'bg-dark-green'
+          : eo.estado === 'alerta' ? 'bg-red-600'
+          : eo.estado === 'sin_dato' ? 'bg-gray-300'
+          : 'bg-yellow-500';
+        dot.classList.add(claseDot);
+      }
+    }
+
+    // Insignia de proceso para la tarjeta de un lote. Reusa las MISMAS
+    // claves que VOCABULARIO_ESTADOS (confirmado/en_proceso/pendiente/
+    // provisional/sin_dato) — no es un vocabulario nuevo, es una segunda
+    // forma de pintar el mismo estado: insignia con fondo, en vez de
+    // color de texto plano. 'confirmado' aquí sí significa lo mismo que
+    // en cualquier otro campo: el dato del lote ya cerró y es definitivo.
+    const INSIGNIA_LOTE = {
+      confirmado:  { texto: 'Cosechado confirmado',        icono: '✓', clases: ['bg-green-50','text-green-800','border-green-200'], claseTarjeta: ['bg-green-50/40', 'border-green-100'] },
+      en_proceso:  { texto: 'En proceso de cosecha',       icono: '●', clases: ['bg-blue-50','text-blue-700','border-blue-200'], claseTarjeta: ['bg-blue-50/40', 'border-blue-100'] },
+      provisional: { texto: 'Carga cerrada · en revisión', icono: '!', clases: ['bg-yellow-50','text-yellow-800','border-yellow-200'], claseTarjeta: ['bg-yellow-50/40', 'border-yellow-100'] },
+      pendiente:   { texto: 'Pendiente',                   icono: '○', clases: ['bg-gray-100','text-gray-500','border-gray-200'], claseTarjeta: ['bg-gray-50/60', 'border-gray-200'] },
+      sin_dato:    { texto: 'Sin datos',                   icono: '—', clases: ['bg-gray-50','text-gray-400','border-gray-100'], claseTarjeta: ['bg-white', 'border-gray-100'] }
+    };
+
+    function campoLote(etiqueta, texto, estado) {
+      return '<div><p class="text-xs text-gray-400 uppercase tracking-wide">' + etiqueta + '</p>' +
+             '<p class="font-bold ' + claseParaEstado(estado) + '">' + texto + '</p></div>';
+    }
+
+    function filaLote(etiqueta, texto, estado, extraHtml) {
+      return '<div class="flex justify-between items-center"><span class="text-gray-500">' + etiqueta + '</span>' +
+             '<span class="font-bold ' + claseParaEstado(estado) + '">' + texto + (extraHtml || '') + '</span></div>';
+    }
+
+    // Plantilla de una tarjeta de lote — Zona Fija: no tiene ningún dato
+    // propio, todo entra por parámetro. N lotes, misma plantilla, N tarjetas.
+    function crearTarjetaLote(lote) {
+      const ins = INSIGNIA_LOTE[lote.estado_proceso] || INSIGNIA_LOTE.sin_dato;
+      const tagFinal = lote.toneladas_totales.estado === 'confirmado'
+        ? '<span class="text-xs font-bold text-green-700 bg-green-50 rounded px-1.5 py-0.5 ml-1 align-middle">FINAL</span>'
+        : '';
+      return '' +
+        '<div class="rounded-3xl p-6 card-shadow border ' + ins.claseTarjeta.join(' ') + '">' +
+          '<div class="flex justify-between items-start mb-3 gap-2">' +
+            '<h3 class="text-3xl font-bold text-dark-green">' + formatearTexto(lote.id) + '</h3>' +
+            '<span class="inline-flex items-center gap-1 text-sm font-bold px-3 py-1.5 rounded-full border whitespace-nowrap ' + ins.clases.join(' ') + '">' + ins.icono + ' ' + ins.texto + '</span>' +
+          '</div>' +
+          '<span class="inline-block text-sm text-gray-500 border border-gray-200 rounded-lg px-3 py-1 mb-4">Variedad: ' + formatearTexto(lote.variedad) + '</span>' +
+          '<div class="grid grid-cols-2 gap-y-3 gap-x-4 border-t border-gray-100 pt-4 mb-3 text-base">' +
+            campoLote('Superficie', formatearNumero(lote.superficie_ha.valor, 2) + ' ha', lote.superficie_ha.estado) +
+            campoLote('Estado de carga', formatearTexto(lote.estado_carga.valor), lote.estado_carga.estado) +
+            campoLote('Fecha de inicio', formatearTexto(lote.fecha_inicio.valor), lote.fecha_inicio.estado) +
+            campoLote('Fecha fin', formatearTexto(lote.fecha_fin.valor), lote.fecha_fin.estado) +
+          '</div>' +
+          '<div class="border-t border-gray-100 pt-3 flex flex-col gap-2 text-base">' +
+            filaLote('Toneladas Totales:', formatearNumero(lote.toneladas_totales.valor, 2) + ' t', lote.toneladas_totales.estado, tagFinal) +
+            filaLote('Rendimiento:', formatearNumero(lote.rendimiento.valor, 2) + ' t/ha', lote.rendimiento.estado) +
+            filaLote('Consumo Diésel:', formatearNumero(lote.consumo_diesel.valor, 2) + ' lt/t', lote.consumo_diesel.estado) +
+            filaLote('Sacarosa Promedio:', formatearNumero(lote.sacarosa_promedio.valor, 1) + '%', lote.sacarosa_promedio.estado) +
+          '</div>' +
+        '</div>';
+    }
+
+    function renderLotes(c) {
+      const r = c.lotes.resumen;
+      pintar('lotes_terminados_cantidad', formatearNumero(r.terminados.cantidad, 0), r.terminados.estado);
+      pintar('lotes_terminados_ha', formatearNumero(r.terminados.ha, 2) + ' ha', r.terminados.estado);
+      pintar('lotes_en_proceso_cantidad', formatearNumero(r.en_proceso.cantidad, 0), r.en_proceso.estado);
+      pintar('lotes_en_proceso_ha', formatearNumero(r.en_proceso.ha, 2) + ' ha', r.en_proceso.estado);
+      pintar('lotes_pendientes_cantidad', formatearNumero(r.pendientes.cantidad, 0), r.pendientes.estado);
+      pintar('lotes_pendientes_ha', formatearNumero(r.pendientes.ha, 2) + ' ha', r.pendientes.estado);
+
+      const lotesItems = (c.lotes && c.lotes.items) ? c.lotes.items : [];
+      
+      const terminados = lotesItems.filter(function(l) { return l.estado_proceso === 'confirmado' || l.estado_proceso === 'provisional'; });
+      const enProceso = lotesItems.filter(function(l) { return l.estado_proceso === 'en_proceso'; });
+      const pendientes = lotesItems.filter(function(l) { return l.estado_proceso === 'pendiente'; });
+
+      function formatearNombres(lista) {
+        if (!lista || lista.length === 0) return '—';
+        const MAX = 6;
+        const nombres = lista.map(function(l) { return formatearTexto(l.id); });
+        if (nombres.length > MAX) {
+          const extra = nombres.length - MAX;
+          return nombres.slice(0, MAX).join(', ') + ' +' + extra + ' más';
+        }
+        return nombres.join(', ');
+      }
+
+      const nodoTerm = document.querySelector('[data-field="lotes_terminados_nombres"]');
+      if (nodoTerm) nodoTerm.textContent = formatearNombres(terminados);
+
+      const nodoProc = document.querySelector('[data-field="lotes_en_proceso_nombres"]');
+      if (nodoProc) nodoProc.textContent = formatearNombres(enProceso);
+
+      const nodoPend = document.querySelector('[data-field="lotes_pendientes_nombres"]');
+      if (nodoPend) nodoPend.textContent = formatearNombres(pendientes);
+
+      const grid = document.getElementById('grid-lotes');
+      if (!grid) return;
+      grid.innerHTML = c.lotes.items.length
+        ? c.lotes.items.map(crearTarjetaLote).join('')
+        : '<p class="text-sm text-gray-400 italic md:col-span-2 text-center py-8">Sin lotes registrados todavía.</p>';
+    }
+
+    // Alterna entre la vista Resumen y la vista Lotes — no recarga la
+    // página, solo muestra/oculta los bloques marcados con data-vista.
+    function mostrarVista(nombre) {
+      document.querySelectorAll('[data-vista]').forEach(function (el) {
+        el.hidden = el.getAttribute('data-vista') !== nombre;
+      });
+      document.querySelectorAll('[data-nav-btn]').forEach(function (a) {
+        const activo = a.getAttribute('data-nav-btn') === nombre;
+        a.classList.toggle('text-green-700', activo);
+        a.classList.toggle('font-bold', activo);
+        a.classList.toggle('border-b-2', activo);
+        a.classList.toggle('border-green-700', activo);
+        a.classList.toggle('text-gray-500', !activo);
+      });
+    }
+
+    // Aplica un contrato (venga del toggle o de fetch real) — el único
+    // lugar que sabe "cómo se pinta todo junto, en el orden correcto".
+    function aplicarContrato(c) {
+      indiceSeleccionado = c.historico_diario.length - 1;
+      renderEstadoSync(c);
+      renderIndicadoresGenerales(c);
+      renderLoteActual(c); // Llamada agregada para la información del lote en proceso actual
+      renderUltimoDia(c);
+      renderEstadoOperativo(c);
+      renderLotes(c);
+      if (chart) {
+        chart.data.labels = c.historico_diario.map(function (d) { return d.fecha; });
+        chart.data.datasets[0].data = c.historico_diario.map(function (d) { return d.toneladas.total.valor; });
+        chart.data.datasets[0].backgroundColor = coloresBarras();
+        chart.update();
+      }
+      renderDiaSeleccionado(c, indiceSeleccionado);
+    }
+
+    // Alterna entre CONTRATO_VACIO y CONTRATO_DEMO — solo para pruebas
+    // visuales durante el desarrollo, no interviene en producción.
+    function cambiarFuente(nombre) {
+      CONTRATO = nombre === 'demo' ? CONTRATO_DEMO : CONTRATO_VACIO;
+      aplicarContrato(CONTRATO);
+
+      document.querySelectorAll('[data-fuente-btn]').forEach(function (btn) {
+        const activo = btn.getAttribute('data-fuente-btn') === nombre;
+        btn.classList.toggle('bg-dark-green', activo);
+        btn.classList.toggle('text-white', activo);
+        btn.classList.toggle('text-gray-500', !activo);
+      });
+    }
+
+    // Trae el contrato real desde URL_CONTRATO. Si no hay endpoint
+    // configurado, no hace nada — la página se queda en el estado Vacío.
+    // Si falla la red o el JSON viene mal formado, lo distingue de
+    // "no hay datos": son dos situaciones distintas, no deben verse igual.
+    async function cargarContrato() {
+      if (!URL_CONTRATO) return;
+      try {
+        const resp = await fetch(URL_CONTRATO, { cache: 'no-store' });
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        CONTRATO = await resp.json();
+        aplicarContrato(CONTRATO);
+      } catch (err) {
+        mostrarErrorCarga(err);
+      }
+    }
+
+    function mostrarErrorCarga(err) {
+      const nodo = document.querySelector('[data-field="estado_sincronizacion"]');
+      if (nodo) {
+        nodo.textContent = 'Error al cargar datos';
+        const contenedor = nodo.parentElement;
+        contenedor.classList.remove('bg-yellow-100','text-yellow-800','bg-green-100','text-green-800','bg-red-100','text-red-800','bg-gray-100','text-gray-500');
+        contenedor.classList.add('bg-red-100','text-red-800');
+      }
+      console.error('No se pudo cargar el contrato de datos:', err);
+    }
+
+    let indiceSeleccionado = CONTRATO.historico_diario.length - 1;
+    let chart;
+
+    function coloresBarras() {
+      return CONTRATO.historico_diario.map((_, i) => i === indiceSeleccionado ? '#1A3626' : '#D1E6D6');
+    }
+
+    function initChart() {
+      const ctx = document.getElementById('dailyYieldChart').getContext('2d');
+      chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: CONTRATO.historico_diario.map(d => d.fecha),
+          datasets: [{
+            data: CONTRATO.historico_diario.map(d => d.toneladas.total.valor),
+            backgroundColor: coloresBarras(),
+            borderRadius: 6
+          }]
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true } },
+          onClick: function (evt, elementos) {
+            if (!elementos.length) return;
+            indiceSeleccionado = elementos[0].index;
+            chart.data.datasets[0].backgroundColor = coloresBarras();
+            chart.update();
+            renderDiaSeleccionado(CONTRATO, indiceSeleccionado);
+          }
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      initChart();
+      cambiarFuente('vacio'); // estado inicial honesto: sin datos de demostración
+      cargarContrato();       // intenta traer datos reales, si hay endpoint configurado
+    });
+    </script>
+</body>
+</html>
