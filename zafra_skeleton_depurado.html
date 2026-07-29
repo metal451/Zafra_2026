@@ -27,6 +27,7 @@
         .circle-bg { fill: none; stroke: #2D5A40; stroke-width: 2.5; }
         .circle { fill: none; stroke-width: 2.5; stroke-linecap: round; animation: progress 1s ease-out forwards; }
         @keyframes progress { 0% { stroke-dasharray: 0 100; } }
+        
         .curved-bg { position: relative; overflow: hidden; }
         .curved-bg::before {
             content: ''; position: absolute; top: 0; right: 0; width: 150%; height: 150%;
@@ -99,12 +100,13 @@
             <!-- Main Progress Card -->
             <div class="lg:col-span-5 bg-dark-green text-white rounded-3xl p-6 curved-bg shadow-lg flex flex-col justify-between relative overflow-hidden h-64">
                 <div class="z-10">
-                    <p class="text-xs font-bold text-green-200 tracking-wider uppercase mb-2">Avance Acumulado</p>
+                    <p class="text-sm font-bold text-green-200 tracking-wider uppercase mb-2">Avance Acumulado</p>
                     <div class="flex items-baseline gap-1">
                         <span class="text-6xl font-bold tracking-tighter" data-field="avance_pct">—</span>
                         <span class="text-2xl font-medium text-green-200">%</span>
                     </div>
-                    <p class="text-sm text-green-100 mt-2"><span class="font-bold text-white" data-field="ha_cosechadas">—</span> ha cosechadas de <span data-field="ha_programadas">—</span> ha programadas.</p>
+                    <p class="text-base text-green-100 mt-2"><span class="font-bold text-white" data-field="ha_cosechadas">—</span> ha cosechadas de <span data-field="ha_programadas">—</span> ha programadas.</p>
+                    <p class="text-sm text-green-200/80 mt-1" data-field="lotes_en_proceso_texto">—</p>
                 </div>
 
                 <div class="absolute bottom-4 right-4 w-32 h-32 z-10">
@@ -131,13 +133,13 @@
             <!-- Stats Grid Right Side -->
             <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100 flex flex-col justify-between h-32">
-                    <p class="text-xs font-bold text-gray-500 tracking-wider uppercase mb-1">Toneladas Estimadas</p>
+                <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-gray-500 tracking-wider uppercase mb-1">Toneladas Estimadas</p>
                     <div class="flex items-baseline gap-1">
-                        <span class="text-3xl font-bold text-dark-green tracking-tight" data-field="toneladas_estimadas_total">—</span>
-                        <span class="text-sm font-medium text-gray-500">t</span>
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="toneladas_estimadas_total">—</span>
+                        <span class="text-base font-medium text-gray-500">t</span>
                     </div>
-                    <div class="mt-auto flex flex-col gap-1 text-xs">
+                    <div class="mt-auto flex flex-col gap-1 text-sm">
                         <div class="flex justify-between items-center">
                             <div class="flex items-center gap-1 text-gray-500">
                                 <span class="w-1.5 h-1.5 rounded-full bg-green-600"></span> Confirmadas
@@ -153,27 +155,27 @@
                     </div>
                 </div>
 
-                <div class="bg-card-light-green rounded-3xl p-6 card-shadow border border-green-50 flex flex-col justify-between h-32">
-                    <p class="text-xs font-bold text-green-800 tracking-wider uppercase mb-1">Quintales Acumulados</p>
+                <div class="bg-card-light-green rounded-3xl p-6 card-shadow border border-green-50 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-green-800 tracking-wider uppercase mb-1">Quintales Acumulados</p>
                     <div class="flex items-baseline gap-1">
-                        <span class="text-3xl font-bold text-dark-green tracking-tight" data-field="quintales_acumulados">—</span>
-                        <span class="text-sm font-medium text-green-800">qq</span>
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="quintales_acumulados">—</span>
+                        <span class="text-base font-medium text-green-800">qq</span>
                     </div>
                 </div>
 
-                <div class="bg-card-beige rounded-3xl p-6 card-shadow border border-yellow-50 flex flex-col justify-between h-32">
-                    <p class="text-xs font-bold text-yellow-800 tracking-wider uppercase mb-1">Sacarosa Promedio</p>
+                <div class="bg-card-beige rounded-3xl p-6 card-shadow border border-yellow-50 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-yellow-800 tracking-wider uppercase mb-1">Sacarosa Promedio</p>
                     <div class="flex items-baseline gap-1">
-                        <span class="text-3xl font-bold text-dark-green tracking-tight" data-field="sacarosa_promedio">—</span>
-                        <span class="text-sm font-medium text-yellow-800">%</span>
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="sacarosa_promedio">—</span>
+                        <span class="text-base font-medium text-yellow-800">%</span>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100 flex flex-col justify-between h-32">
-                    <p class="text-xs font-bold text-gray-500 tracking-wider uppercase mb-1">Rendimiento Medio</p>
+                <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-gray-500 tracking-wider uppercase mb-1">Rendimiento Medio</p>
                     <div class="flex items-baseline gap-1">
-                        <span class="text-3xl font-bold text-dark-green tracking-tight" data-field="rendimiento_medio">—</span>
-                        <span class="text-sm font-medium text-gray-500">t/ha</span>
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="rendimiento_medio">—</span>
+                        <span class="text-base font-medium text-gray-500">t/ha</span>
                     </div>
                 </div>
 
@@ -210,8 +212,8 @@
             <!-- Day Selected Details Panel -->
             <div class="lg:col-span-1 bg-card-beige rounded-3xl p-6 card-shadow border border-yellow-50 flex flex-col gap-4">
                 <div>
-                    <p class="text-xs font-bold text-yellow-800 tracking-wider uppercase mb-1">DÍA SELECCIONADO</p>
-                    <p class="text-lg font-bold text-dark-green" data-field="dia_seleccionado_fecha">—</p>
+                    <p class="text-sm font-bold text-yellow-800 tracking-wider uppercase mb-1">DÍA SELECCIONADO</p>
+                    <p class="text-xl font-bold text-dark-green" data-field="dia_seleccionado_fecha">—</p>
                 </div>
 
                 <div>
@@ -219,49 +221,49 @@
                         <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="dia_seleccionado_total">—</span>
                         <span class="text-lg font-medium text-yellow-800">t</span>
                     </div>
-                    <p class="text-xs text-yellow-800/70">Toneladas estimadas totales</p>
+                    <p class="text-sm text-yellow-800/70">Toneladas estimadas totales</p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3 mt-2">
                     <div class="bg-white/60 rounded-xl p-3">
-                        <p class="text-sm font-bold text-dark-green" data-field="dia_seleccionado_confirmadas">—</p>
-                        <p class="text-[10px] text-gray-500">confirmadas</p>
+                        <p class="text-lg font-bold text-dark-green" data-field="dia_seleccionado_confirmadas">—</p>
+                        <p class="text-xs text-gray-500">confirmadas</p>
                     </div>
                     <div class="bg-white/60 rounded-xl p-3">
-                        <p class="text-sm font-bold text-dark-green" data-field="dia_seleccionado_por_confirmar">—</p>
-                        <p class="text-[10px] text-gray-500">por confirmar</p>
+                        <p class="text-lg font-bold text-dark-green" data-field="dia_seleccionado_por_confirmar">—</p>
+                        <p class="text-xs text-gray-500">por confirmar</p>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-2 mt-2">
                     <div class="bg-white/60 rounded-xl p-3 text-center">
-                        <p class="text-[9px] text-gray-500 leading-tight mb-1 h-6 flex items-center justify-center">Camiones<br>cargados</p>
-                        <p class="text-lg font-bold text-dark-green" data-field="dia_seleccionado_camiones_cargados">—</p>
+                        <p class="text-xs text-gray-500 leading-tight mb-1 h-6 flex items-center justify-center">Camiones<br>cargados</p>
+                        <p class="text-2xl font-bold text-dark-green" data-field="dia_seleccionado_camiones_cargados">—</p>
                     </div>
                     <div class="bg-white/60 rounded-xl p-3 text-center">
-                        <p class="text-[9px] text-gray-500 leading-tight mb-1 h-6 flex items-center justify-center">Chatas cargadas</p>
-                        <p class="text-lg font-bold text-dark-green" data-field="dia_seleccionado_chatas_cargadas">—</p>
+                        <p class="text-xs text-gray-500 leading-tight mb-1 h-6 flex items-center justify-center">Chatas cargadas</p>
+                        <p class="text-2xl font-bold text-dark-green" data-field="dia_seleccionado_chatas_cargadas">—</p>
                     </div>
                 </div>
 
                 <div class="bg-[#E6E8DB] rounded-xl p-4 mt-2">
-                    <p class="text-[10px] text-gray-500 mb-1">Cosechando actualmente</p>
-                    <p class="text-sm font-bold text-dark-green mb-1" data-field="dia_seleccionado_lotes">—</p>
-                    <p class="text-[9px] text-gray-400" data-field="dia_seleccionado_grupo">—</p>
+                    <p class="text-xs text-gray-500 mb-1">Cosechando actualmente</p>
+                    <p class="text-lg font-bold text-dark-green mb-1" data-field="dia_seleccionado_lotes">—</p>
+                    <p class="text-xs text-gray-400" data-field="dia_seleccionado_grupo">—</p>
                 </div>
 
                 <div class="grid grid-cols-2 gap-3 mt-2 flex-grow">
                     <div class="bg-white/60 rounded-xl p-3 flex flex-col justify-between">
-                        <p class="text-[10px] text-gray-500">Sacarosa promedio</p>
-                        <p class="text-xl font-bold text-dark-green" data-field="dia_seleccionado_sacarosa">—</p>
+                        <p class="text-xs text-gray-500">Sacarosa promedio</p>
+                        <p class="text-2xl font-bold text-dark-green" data-field="dia_seleccionado_sacarosa">—</p>
                     </div>
                     <div class="bg-white/60 rounded-xl p-3 flex flex-col justify-between">
                         <div>
-                            <p class="text-[10px] text-gray-500">Quintales totales</p>
+                            <p class="text-xs text-gray-500">Quintales totales</p>
                         </div>
                         <div>
-                            <p class="text-xl font-bold text-dark-green" data-field="dia_seleccionado_quintales">—</p>
-                            <p class="text-[8px] text-gray-400 mt-1">Calculados sobre toneladas confirmadas.</p>
+                            <p class="text-2xl font-bold text-dark-green" data-field="dia_seleccionado_quintales">—</p>
+                            <p class="text-[10px] text-gray-400 mt-1">Calculados sobre toneladas confirmadas.</p>
                         </div>
                     </div>
                 </div>
@@ -277,24 +279,27 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <div class="bg-card-light-green rounded-3xl p-6 card-shadow border border-green-50">
                 <div class="flex justify-between items-start mb-3">
-                    <p class="text-xs font-bold text-green-800 tracking-wider uppercase">Cortes<br>Terminados</p>
-                    <span class="text-sm font-bold text-dark-green bg-white border border-green-200 rounded-lg px-3 py-1.5" data-field="lotes_terminados_ha">—</span>
+                    <p class="text-sm font-bold text-green-800 tracking-wider uppercase">Cortes<br>Terminados</p>
+                    <span class="text-base font-bold text-dark-green bg-white border border-green-200 rounded-lg px-3 py-1.5" data-field="lotes_terminados_ha">—</span>
                 </div>
-                <p class="text-3xl font-bold text-dark-green"><span data-field="lotes_terminados_cantidad">—</span> lotes</p>
+                <p class="text-4xl font-bold text-dark-green"><span data-field="lotes_terminados_cantidad">—</span> lotes</p>
+                <p class="text-sm mt-2 text-green-800/80 leading-tight" data-field="lotes_terminados_nombres"></p>
             </div>
             <div class="bg-white rounded-3xl p-6 card-shadow border border-blue-100">
                 <div class="flex justify-between items-start mb-3">
-                    <p class="text-xs font-bold text-blue-700 tracking-wider uppercase">En proceso<br>de cosecha</p>
-                    <span class="text-sm font-bold text-blue-700 bg-white border border-blue-200 rounded-lg px-3 py-1.5" data-field="lotes_en_proceso_ha">—</span>
+                    <p class="text-sm font-bold text-blue-700 tracking-wider uppercase">En proceso<br>de cosecha</p>
+                    <span class="text-base font-bold text-blue-700 bg-white border border-blue-200 rounded-lg px-3 py-1.5" data-field="lotes_en_proceso_ha">—</span>
                 </div>
-                <p class="text-3xl font-bold text-blue-700"><span data-field="lotes_en_proceso_cantidad">—</span> lote</p>
+                <p class="text-4xl font-bold text-blue-700"><span data-field="lotes_en_proceso_cantidad">—</span> lote</p>
+                <p class="text-sm mt-2 text-blue-700/80 leading-tight" data-field="lotes_en_proceso_nombres"></p>
             </div>
             <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100">
                 <div class="flex justify-between items-start mb-3">
-                    <p class="text-xs font-bold text-gray-500 tracking-wider uppercase">Lotes<br>Pendientes</p>
-                    <span class="text-sm font-bold text-dark-green bg-white border border-gray-200 rounded-lg px-3 py-1.5" data-field="lotes_pendientes_ha">—</span>
+                    <p class="text-sm font-bold text-gray-500 tracking-wider uppercase">Lotes<br>Pendientes</p>
+                    <span class="text-base font-bold text-dark-green bg-white border border-gray-200 rounded-lg px-3 py-1.5" data-field="lotes_pendientes_ha">—</span>
                 </div>
-                <p class="text-3xl font-bold text-dark-green"><span data-field="lotes_pendientes_cantidad">—</span> lotes</p>
+                <p class="text-4xl font-bold text-dark-green"><span data-field="lotes_pendientes_cantidad">—</span> lotes</p>
+                <p class="text-sm mt-2 text-gray-500 leading-tight" data-field="lotes_pendientes_nombres"></p>
             </div>
         </div>
 
@@ -474,11 +479,11 @@
     // alternar el interruptor — todo lo demás vuelve a leerla desde acá.
     let CONTRATO = CONTRATO_VACIO;
 
-    // Endpoint del contrato real. Completar cuando esté decidido:
+    // Endpoint del contrato real.
     // - JSON crudo en GitHub → 'https://raw.githubusercontent.com/usuario/repo/main/datos_zafra.json'
     // - Web App de Apps Script → la URL que entrega /exec al publicar
     // Vacío = la página no intenta traer datos reales todavía; se queda en Vacío.
-    const URL_CONTRATO = 'https://raw.githubusercontent.com/metal451/Zafra_2026/main/contrato_real_20260719.json';
+    const URL_CONTRATO = 'https://raw.githubusercontent.com/metal451/Zafra_2026/metal451-patch-1/contrato_real_20260721.json';
 
     // ===================================================================
     // ZONA FIJA — MOTOR GENÉRICO. No conoce zafra, ni caña, ni lotes.
@@ -568,6 +573,25 @@
       pintar('toneladas_periodo', formatearNumero(c.resumen_diario.toneladas_periodo.valor, 0) + ' t', c.resumen_diario.toneladas_periodo.estado);
     }
 
+    // NUEVA FUNCIÓN: Extrae qué lote o lotes están en proceso activo y lo presenta en Avance Acumulado.
+    function renderLoteActual(c) {
+      const lotesItems = (c.lotes && c.lotes.items) ? c.lotes.items : [];
+      const enProceso = lotesItems.filter(function(lote) {
+        return lote.estado_proceso === 'en_proceso';
+      });
+
+      let texto = 'Ningún lote en proceso ahora';
+      
+      if (enProceso.length === 1) {
+        texto = 'Cosechando: ' + formatearTexto(enProceso[0].id);
+      } else if (enProceso.length >= 2) {
+        const nombres = enProceso.map(function(l) { return formatearTexto(l.id); });
+        texto = 'Cosechando: ' + nombres.join(', ');
+      }
+
+      pintar('lotes_en_proceso_texto', texto, null);
+    }
+
     function renderUltimoDia(c) {
       const ultimo = c.historico_diario[c.historico_diario.length - 1];
       pintar('ultimo_dia_valor', formatearNumero(ultimo.toneladas.total.valor, 0), ultimo.toneladas.total.estado);
@@ -608,15 +632,15 @@
     // color de texto plano. 'confirmado' aquí sí significa lo mismo que
     // en cualquier otro campo: el dato del lote ya cerró y es definitivo.
     const INSIGNIA_LOTE = {
-      confirmado:  { texto: 'Cosechado confirmado',        icono: '✓', clases: ['bg-green-50','text-green-800','border-green-200'] },
-      en_proceso:  { texto: 'En proceso de cosecha',       icono: '●', clases: ['bg-blue-50','text-blue-700','border-blue-200'] },
-      provisional: { texto: 'Carga cerrada · en revisión', icono: '!', clases: ['bg-yellow-50','text-yellow-800','border-yellow-200'] },
-      pendiente:   { texto: 'Pendiente',                   icono: '○', clases: ['bg-gray-100','text-gray-500','border-gray-200'] },
-      sin_dato:    { texto: 'Sin datos',                   icono: '—', clases: ['bg-gray-50','text-gray-400','border-gray-100'] }
+      confirmado:  { texto: 'Cosechado confirmado',        icono: '✓', clases: ['bg-green-50','text-green-800','border-green-200'], claseTarjeta: ['bg-green-50/40', 'border-green-100'] },
+      en_proceso:  { texto: 'En proceso de cosecha',       icono: '●', clases: ['bg-blue-50','text-blue-700','border-blue-200'], claseTarjeta: ['bg-blue-50/40', 'border-blue-100'] },
+      provisional: { texto: 'Carga cerrada · en revisión', icono: '!', clases: ['bg-yellow-50','text-yellow-800','border-yellow-200'], claseTarjeta: ['bg-yellow-50/40', 'border-yellow-100'] },
+      pendiente:   { texto: 'Pendiente',                   icono: '○', clases: ['bg-gray-100','text-gray-500','border-gray-200'], claseTarjeta: ['bg-gray-50/60', 'border-gray-200'] },
+      sin_dato:    { texto: 'Sin datos',                   icono: '—', clases: ['bg-gray-50','text-gray-400','border-gray-100'], claseTarjeta: ['bg-white', 'border-gray-100'] }
     };
 
     function campoLote(etiqueta, texto, estado) {
-      return '<div><p class="text-[10px] text-gray-400 uppercase tracking-wide">' + etiqueta + '</p>' +
+      return '<div><p class="text-xs text-gray-400 uppercase tracking-wide">' + etiqueta + '</p>' +
              '<p class="font-bold ' + claseParaEstado(estado) + '">' + texto + '</p></div>';
     }
 
@@ -630,22 +654,22 @@
     function crearTarjetaLote(lote) {
       const ins = INSIGNIA_LOTE[lote.estado_proceso] || INSIGNIA_LOTE.sin_dato;
       const tagFinal = lote.toneladas_totales.estado === 'confirmado'
-        ? '<span class="text-[10px] font-bold text-green-700 bg-green-50 rounded px-1.5 py-0.5 ml-1 align-middle">FINAL</span>'
+        ? '<span class="text-xs font-bold text-green-700 bg-green-50 rounded px-1.5 py-0.5 ml-1 align-middle">FINAL</span>'
         : '';
       return '' +
-        '<div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100">' +
+        '<div class="rounded-3xl p-6 card-shadow border ' + ins.claseTarjeta.join(' ') + '">' +
           '<div class="flex justify-between items-start mb-3 gap-2">' +
-            '<h3 class="text-2xl font-bold text-dark-green">' + formatearTexto(lote.id) + '</h3>' +
-            '<span class="inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-full border whitespace-nowrap ' + ins.clases.join(' ') + '">' + ins.icono + ' ' + ins.texto + '</span>' +
+            '<h3 class="text-3xl font-bold text-dark-green">' + formatearTexto(lote.id) + '</h3>' +
+            '<span class="inline-flex items-center gap-1 text-sm font-bold px-3 py-1.5 rounded-full border whitespace-nowrap ' + ins.clases.join(' ') + '">' + ins.icono + ' ' + ins.texto + '</span>' +
           '</div>' +
-          '<span class="inline-block text-xs text-gray-500 border border-gray-200 rounded-lg px-3 py-1 mb-4">Variedad: ' + formatearTexto(lote.variedad) + '</span>' +
-          '<div class="grid grid-cols-2 gap-y-3 gap-x-4 border-t border-gray-100 pt-4 mb-3 text-sm">' +
+          '<span class="inline-block text-sm text-gray-500 border border-gray-200 rounded-lg px-3 py-1 mb-4">Variedad: ' + formatearTexto(lote.variedad) + '</span>' +
+          '<div class="grid grid-cols-2 gap-y-3 gap-x-4 border-t border-gray-100 pt-4 mb-3 text-base">' +
             campoLote('Superficie', formatearNumero(lote.superficie_ha.valor, 2) + ' ha', lote.superficie_ha.estado) +
             campoLote('Estado de carga', formatearTexto(lote.estado_carga.valor), lote.estado_carga.estado) +
             campoLote('Fecha de inicio', formatearTexto(lote.fecha_inicio.valor), lote.fecha_inicio.estado) +
             campoLote('Fecha fin', formatearTexto(lote.fecha_fin.valor), lote.fecha_fin.estado) +
           '</div>' +
-          '<div class="border-t border-gray-100 pt-3 flex flex-col gap-2 text-sm">' +
+          '<div class="border-t border-gray-100 pt-3 flex flex-col gap-2 text-base">' +
             filaLote('Toneladas Totales:', formatearNumero(lote.toneladas_totales.valor, 2) + ' t', lote.toneladas_totales.estado, tagFinal) +
             filaLote('Rendimiento:', formatearNumero(lote.rendimiento.valor, 2) + ' t/ha', lote.rendimiento.estado) +
             filaLote('Consumo Diésel:', formatearNumero(lote.consumo_diesel.valor, 2) + ' lt/t', lote.consumo_diesel.estado) +
@@ -662,6 +686,32 @@
       pintar('lotes_en_proceso_ha', formatearNumero(r.en_proceso.ha, 2) + ' ha', r.en_proceso.estado);
       pintar('lotes_pendientes_cantidad', formatearNumero(r.pendientes.cantidad, 0), r.pendientes.estado);
       pintar('lotes_pendientes_ha', formatearNumero(r.pendientes.ha, 2) + ' ha', r.pendientes.estado);
+
+      const lotesItems = (c.lotes && c.lotes.items) ? c.lotes.items : [];
+      
+      const terminados = lotesItems.filter(function(l) { return l.estado_proceso === 'confirmado' || l.estado_proceso === 'provisional'; });
+      const enProceso = lotesItems.filter(function(l) { return l.estado_proceso === 'en_proceso'; });
+      const pendientes = lotesItems.filter(function(l) { return l.estado_proceso === 'pendiente'; });
+
+      function formatearNombres(lista) {
+        if (!lista || lista.length === 0) return '—';
+        const MAX = 6;
+        const nombres = lista.map(function(l) { return formatearTexto(l.id); });
+        if (nombres.length > MAX) {
+          const extra = nombres.length - MAX;
+          return nombres.slice(0, MAX).join(', ') + ' +' + extra + ' más';
+        }
+        return nombres.join(', ');
+      }
+
+      const nodoTerm = document.querySelector('[data-field="lotes_terminados_nombres"]');
+      if (nodoTerm) nodoTerm.textContent = formatearNombres(terminados);
+
+      const nodoProc = document.querySelector('[data-field="lotes_en_proceso_nombres"]');
+      if (nodoProc) nodoProc.textContent = formatearNombres(enProceso);
+
+      const nodoPend = document.querySelector('[data-field="lotes_pendientes_nombres"]');
+      if (nodoPend) nodoPend.textContent = formatearNombres(pendientes);
 
       const grid = document.getElementById('grid-lotes');
       if (!grid) return;
@@ -692,6 +742,7 @@
       indiceSeleccionado = c.historico_diario.length - 1;
       renderEstadoSync(c);
       renderIndicadoresGenerales(c);
+      renderLoteActual(c); // Llamada agregada para la información del lote en proceso actual
       renderUltimoDia(c);
       renderEstadoOperativo(c);
       renderLotes(c);
