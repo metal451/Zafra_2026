@@ -1,16 +1,16 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "30 jul, 15:17",
+    "ultima_actualizacion": "30 jul, 23:15",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
     "avance_pct": {
-      "valor": 19.71,
+      "valor": 25.84,
       "estado": "confirmado"
     },
     "ha_cosechadas": {
-      "valor": 25.54,
+      "valor": 33.48,
       "estado": "confirmado"
     },
     "ha_programadas": {
@@ -18,7 +18,7 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 1486.42,
+      "valor": 1563.51,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
@@ -26,7 +26,7 @@
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 414.54,
+      "valor": 491.63,
       "estado": "estimado"
     },
     "quintales_acumulados": {
@@ -38,13 +38,13 @@
       "estado": "confirmado"
     },
     "rendimiento_medio": {
-      "valor": 38.9,
+      "valor": 29.67,
       "estado": "confirmado"
     }
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 414.54,
+      "valor": 491.63,
       "estado": "estimado"
     }
   },
@@ -238,7 +238,7 @@
       "fecha": "30 jul",
       "toneladas": {
         "total": {
-          "valor": 122.82,
+          "valor": 199.91,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -246,16 +246,16 @@
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 122.82,
+          "valor": 199.91,
           "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 3,
+        "valor": 6,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 5,
+        "valor": 7,
         "estado": "confirmado"
       },
       "lote_grupo": {
@@ -317,13 +317,13 @@
   "lotes": {
     "resumen": {
       "terminados": {
-        "cantidad": 4,
-        "ha": 25.54,
+        "cantidad": 5,
+        "ha": 33.48,
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 4,
-        "ha": 31.19,
+        "cantidad": 3,
+        "ha": 23.25,
         "estado": "confirmado"
       },
       "pendientes": {
@@ -780,22 +780,22 @@
       {
         "id": "Lote 18",
         "variedad": null,
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "provisional",
         "superficie_ha": {
           "valor": 7.94,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "provisional"
         },
         "fecha_inicio": {
           "valor": "29 jul",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "30 jul",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
           "valor": null,
