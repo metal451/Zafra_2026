@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "1 ago, 19:17",
+    "ultima_actualizacion": "2 ago, 08:22",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -18,7 +18,7 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 1777.37,
+      "valor": 1825.82,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
@@ -26,7 +26,7 @@
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 382.98,
+      "valor": 431.43,
       "estado": "estimado"
     },
     "quintales_acumulados": {
@@ -44,7 +44,7 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 705.49,
+      "valor": 753.94,
       "estado": "estimado"
     }
   },
@@ -275,7 +275,7 @@
       "fecha": "2 ago",
       "toneladas": {
         "total": {
-          "valor": 0,
+          "valor": 48.45,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -283,12 +283,12 @@
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
+          "valor": 48.45,
+          "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 0,
+        "valor": 3,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
@@ -296,8 +296,8 @@
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": "Lote 2, Lote 3 — origen compartido",
+        "estado": "confirmado"
       },
       "sacarosa": {
         "valor": null,
@@ -695,8 +695,8 @@
           "estado": "provisional"
         },
         "consumo_diesel": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": 1.66,
+          "estado": "provisional"
         },
         "sacarosa_promedio": {
           "valor": null,
