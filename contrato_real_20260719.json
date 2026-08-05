@@ -30,11 +30,11 @@
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": 2064.33,
+      "valor": 2175.49,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
-      "valor": 10.17,
+      "valor": 10.71,
       "estado": "confirmado"
     },
     "rendimiento_medio": {
@@ -226,12 +226,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 11.65,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 111.16,
+        "estado": "confirmado"
       }
     },
     {
