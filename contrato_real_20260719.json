@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "4 ago, 02:20",
+    "ultima_actualizacion": "4 ago, 17:17",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -18,19 +18,19 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 2229.8,
+      "valor": 2398.26,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
-      "valor": 1768.14,
+      "valor": 2051.75,
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 461.66,
+      "valor": 346.51,
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": 1597.52,
+      "valor": 2064.33,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
@@ -38,68 +38,31 @@
       "estado": "confirmado"
     },
     "rendimiento_medio": {
-      "valor": 41.06,
+      "valor": 42.21,
       "estado": "confirmado"
     }
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 968.77,
+      "valor": 1020.89,
       "estado": "estimado"
     }
   },
   "historico_diario": [
     {
-      "fecha": "29 jul",
-      "toneladas": {
-        "total": {
-          "valor": 116.34,
-          "estado": "estimado"
-        },
-        "confirmadas": {
-          "valor": 104.45,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 11.89,
-          "estado": "estimado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 1,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 7,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 18; Lote 15",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 5.64,
-        "estado": "confirmado"
-      },
-      "quintales": {
-        "valor": 58.31,
-        "estado": "confirmado"
-      }
-    },
-    {
       "fecha": "30 jul",
       "toneladas": {
         "total": {
-          "valor": 207.11,
-          "estado": "estimado"
+          "valor": 236.69,
+          "estado": "confirmado"
         },
         "confirmadas": {
           "valor": 236.69,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": -29.58,
-          "estado": "estimado"
+          "valor": 0,
+          "estado": "confirmado"
         }
       },
       "camiones_cargados": {
@@ -115,12 +78,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": 7.54,
-        "estado": "provisional"
+        "valor": 10.91,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": 141.26,
-        "estado": "provisional"
+        "valor": 255.69,
+        "estado": "confirmado"
       }
     },
     {
@@ -152,32 +115,32 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 11.71,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 106.12,
+        "estado": "confirmado"
       }
     },
     {
       "fecha": "1 ago",
       "toneladas": {
         "total": {
-          "valor": 102.52,
+          "valor": 120.42,
           "estado": "estimado"
         },
         "confirmadas": {
-          "valor": 58.06,
+          "valor": 104.85,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 44.46,
+          "valor": 15.57,
           "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 0,
+        "valor": 1,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
@@ -189,27 +152,27 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 11.57,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 119.96,
+        "estado": "confirmado"
       }
     },
     {
       "fecha": "2 ago",
       "toneladas": {
         "total": {
-          "valor": 123.42,
+          "valor": 121.9,
           "estado": "estimado"
         },
         "confirmadas": {
-          "valor": 17.05,
+          "valor": 61.05,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 106.37,
+          "valor": 60.85,
           "estado": "estimado"
         }
       },
@@ -226,27 +189,27 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 11.19,
+        "estado": "provisional"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 18.87,
+        "estado": "provisional"
       }
     },
     {
       "fecha": "3 ago",
       "toneladas": {
         "total": {
-          "valor": 119.23,
+          "valor": 123.97,
           "estado": "estimado"
         },
         "confirmadas": {
-          "valor": 0,
+          "valor": 96.51,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 119.23,
+          "valor": 27.46,
           "estado": "estimado"
         }
       },
@@ -264,18 +227,55 @@
       },
       "sacarosa": {
         "valor": null,
-        "estado": "sin_dato"
+        "estado": "pendiente"
       },
       "quintales": {
         "valor": null,
-        "estado": "sin_dato"
+        "estado": "pendiente"
       }
     },
     {
       "fecha": "4 ago",
       "toneladas": {
         "total": {
-          "valor": 118.59,
+          "valor": 236.35,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 96.31,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 140.04,
+          "estado": "estimado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 5,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 10,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": "Lote 2, Lote 3 — origen compartido",
+        "estado": "confirmado"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "pendiente"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "pendiente"
+      }
+    },
+    {
+      "fecha": "5 ago",
+      "toneladas": {
+        "total": {
+          "valor": 0,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -283,21 +283,21 @@
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 118.59,
-          "estado": "estimado"
+          "valor": 0,
+          "estado": "confirmado"
         }
       },
       "camiones_cargados": {
-        "valor": 2,
+        "valor": 0,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 6,
+        "valor": 0,
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": "Lote 2, Lote 3 — origen compartido",
-        "estado": "confirmado"
+        "valor": null,
+        "estado": "sin_dato"
       },
       "sacarosa": {
         "valor": null,
@@ -391,15 +391,15 @@
           "estado": "sin_dato"
         },
         "toneladas_totales": {
-          "valor": 49.48,
+          "valor": 172.26,
           "estado": "estimado"
         },
         "rendimiento": {
-          "valor": 5.97,
+          "valor": 20.78,
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 2.14,
+          "valor": 1.86,
           "estado": "estimado"
         },
         "sacarosa_promedio": {
@@ -428,15 +428,15 @@
           "estado": "sin_dato"
         },
         "toneladas_totales": {
-          "valor": 45.96,
+          "valor": 160,
           "estado": "estimado"
         },
         "rendimiento": {
-          "valor": 5.97,
+          "valor": 20.78,
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 2.14,
+          "valor": 1.86,
           "estado": "estimado"
         },
         "sacarosa_promedio": {
@@ -687,15 +687,15 @@
           "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 348.95,
+          "valor": 395.74,
           "estado": "provisional"
         },
         "rendimiento": {
-          "valor": 48.06,
+          "valor": 54.51,
           "estado": "provisional"
         },
         "consumo_diesel": {
-          "valor": 1.24,
+          "valor": 1.16,
           "estado": "provisional"
         },
         "sacarosa_promedio": {
