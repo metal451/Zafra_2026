@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "5 ago, 16:07",
+    "ultima_actualizacion": "6 ago, 11:30",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -18,7 +18,7 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 2575.67,
+      "valor": 2623.82,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
@@ -26,7 +26,7 @@
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 237.35,
+      "valor": 285.5,
       "estado": "estimado"
     },
     "quintales_acumulados": {
@@ -44,7 +44,7 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 959.03,
+      "valor": 1007.18,
       "estado": "estimado"
     }
   },
@@ -275,7 +275,7 @@
       "fecha": "6 ago",
       "toneladas": {
         "total": {
-          "valor": 0,
+          "valor": 48.15,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -283,21 +283,21 @@
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
+          "valor": 48.15,
+          "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 0,
+        "valor": 1,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 0,
+        "valor": 2,
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": "Lote 2, Lote 3 — origen compartido",
+        "estado": "confirmado"
       },
       "sacarosa": {
         "valor": null,
@@ -399,7 +399,7 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 1.81,
+          "valor": 1.86,
           "estado": "estimado"
         },
         "sacarosa_promedio": {
@@ -436,7 +436,7 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 1.81,
+          "valor": 1.86,
           "estado": "estimado"
         },
         "sacarosa_promedio": {
