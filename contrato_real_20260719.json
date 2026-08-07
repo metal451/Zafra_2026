@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "6 ago, 11:30",
+    "ultima_actualizacion": "6 ago, 20:27",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -18,7 +18,7 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 2623.82,
+      "valor": 2766.61,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
@@ -26,7 +26,7 @@
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 285.5,
+      "valor": 428.29,
       "estado": "estimado"
     },
     "quintales_acumulados": {
@@ -44,48 +44,11 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 1007.18,
+      "valor": 967.69,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "31 jul",
-      "toneladas": {
-        "total": {
-          "valor": 182.28,
-          "estado": "estimado"
-        },
-        "confirmadas": {
-          "valor": 136.76,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 45.52,
-          "estado": "estimado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 4,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 8,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 15",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 11.2,
-        "estado": "confirmado"
-      },
-      "quintales": {
-        "valor": 151.63,
-        "estado": "confirmado"
-      }
-    },
     {
       "fecha": "1 ago",
       "toneladas": {
@@ -275,7 +238,7 @@
       "fecha": "6 ago",
       "toneladas": {
         "total": {
-          "valor": 48.15,
+          "valor": 190.94,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -283,21 +246,58 @@
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 48.15,
+          "valor": 190.94,
           "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 1,
+        "valor": 4,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 2,
+        "valor": 8,
         "estado": "confirmado"
       },
       "lote_grupo": {
         "valor": "Lote 2, Lote 3 — origen compartido",
         "estado": "confirmado"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
+    },
+    {
+      "fecha": "7 ago",
+      "toneladas": {
+        "total": {
+          "valor": 0,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 0,
+          "estado": "confirmado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": null,
+        "estado": "sin_dato"
       },
       "sacarosa": {
         "valor": null,
