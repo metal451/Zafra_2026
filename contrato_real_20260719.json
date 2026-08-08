@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "7 ago, 19:31",
+    "ultima_actualizacion": "8 ago, 08:21",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -18,7 +18,7 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 3088.05,
+      "valor": 3316.62,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
@@ -26,7 +26,7 @@
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 416.75,
+      "valor": 645.32,
       "estado": "estimado"
     },
     "quintales_acumulados": {
@@ -44,7 +44,7 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 1085.56,
+      "valor": 1209.88,
       "estado": "estimado"
     }
   },
@@ -275,7 +275,7 @@
       "fecha": "8 ago",
       "toneladas": {
         "total": {
-          "valor": 0,
+          "valor": 124.32,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -283,21 +283,21 @@
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
+          "valor": 124.32,
+          "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 0,
+        "valor": 2,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 0,
+        "valor": 6,
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": "Lote 4; Lote 5, Lote 6, Lote 7 — origen compartido",
+        "estado": "confirmado"
       },
       "sacarosa": {
         "valor": null,
