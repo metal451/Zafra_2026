@@ -1,16 +1,16 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "7 ago, 10:21",
+    "ultima_actualizacion": "7 ago, 19:31",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
     "avance_pct": {
-      "valor": 31.45,
+      "valor": 43.79,
       "estado": "confirmado"
     },
     "ha_cosechadas": {
-      "valor": 40.74,
+      "valor": 56.73,
       "estado": "confirmado"
     },
     "ha_programadas": {
@@ -18,7 +18,7 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 2912.91,
+      "valor": 3088.05,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
@@ -26,11 +26,11 @@
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 241.61,
+      "valor": 416.75,
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": 2387.89,
+      "valor": 2303.15,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
@@ -38,54 +38,17 @@
       "estado": "confirmado"
     },
     "rendimiento_medio": {
-      "valor": 45.26,
+      "valor": 47.09,
       "estado": "confirmado"
     }
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 1113.99,
+      "valor": 1085.56,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "1 ago",
-      "toneladas": {
-        "total": {
-          "valor": 169.69,
-          "estado": "confirmado"
-        },
-        "confirmadas": {
-          "valor": 169.69,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 2,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 9,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 15",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 11.62,
-        "estado": "provisional"
-      },
-      "quintales": {
-        "valor": 178.06,
-        "estado": "provisional"
-      }
-    },
     {
       "fecha": "2 ago",
       "toneladas": {
@@ -115,11 +78,11 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": 11.58,
+        "valor": 10.57,
         "estado": "provisional"
       },
       "quintales": {
-        "valor": 95.31,
+        "valor": 69.56,
         "estado": "provisional"
       }
     },
@@ -152,11 +115,11 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": 11.09,
+        "valor": 11.65,
         "estado": "provisional"
       },
       "quintales": {
-        "valor": 126.78,
+        "valor": 111.16,
         "estado": "provisional"
       }
     },
@@ -189,12 +152,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": 11.82,
-        "estado": "provisional"
+        "valor": null,
+        "estado": "pendiente"
       },
       "quintales": {
-        "valor": 16.73,
-        "estado": "provisional"
+        "valor": null,
+        "estado": "pendiente"
       }
     },
     {
@@ -275,7 +238,7 @@
       "fecha": "7 ago",
       "toneladas": {
         "total": {
-          "valor": 148.42,
+          "valor": 289.68,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -283,21 +246,58 @@
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 148.42,
+          "valor": 289.68,
           "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 3,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
         "valor": 6,
         "estado": "confirmado"
       },
-      "lote_grupo": {
-        "valor": "Lote 2, Lote 3 — origen compartido",
+      "chatas_cargadas": {
+        "valor": 12,
         "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": "Lote 2, Lote 3 — origen compartido; Lote 5, Lote 6, Lote 7 — origen compartido; Lote 4",
+        "estado": "confirmado"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
+    },
+    {
+      "fecha": "8 ago",
+      "toneladas": {
+        "total": {
+          "valor": 0,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 0,
+          "estado": "confirmado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": null,
+        "estado": "sin_dato"
       },
       "sacarosa": {
         "valor": null,
@@ -317,18 +317,18 @@
   "lotes": {
     "resumen": {
       "terminados": {
-        "cantidad": 6,
-        "ha": 40.74,
+        "cantidad": 8,
+        "ha": 56.73,
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 2,
-        "ha": 15.99,
+        "cantidad": 4,
+        "ha": 24.75,
         "estado": "confirmado"
       },
       "pendientes": {
-        "cantidad": 10,
-        "ha": 72.82,
+        "cantidad": 6,
+        "ha": 48.07,
         "estado": "confirmado"
       }
     },
@@ -373,34 +373,34 @@
       {
         "id": "Lote 2",
         "variedad": "UCG-9020, MUYURINA",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "provisional",
         "superficie_ha": {
           "valor": 8.29,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "provisional"
         },
         "fecha_inicio": {
           "valor": "20 jul",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "7 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 428.89,
-          "estado": "estimado"
+          "valor": 454.87,
+          "estado": "provisional"
         },
         "rendimiento": {
-          "valor": 51.74,
-          "estado": "estimado"
+          "valor": 54.87,
+          "estado": "provisional"
         },
         "consumo_diesel": {
           "valor": 1.71,
-          "estado": "estimado"
+          "estado": "provisional"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -410,34 +410,34 @@
       {
         "id": "Lote 3",
         "variedad": "UCG-9020, MUYURINA",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "provisional",
         "superficie_ha": {
           "valor": 7.7,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "provisional"
         },
         "fecha_inicio": {
           "valor": "20 jul",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "7 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 398.37,
-          "estado": "estimado"
+          "valor": 422.5,
+          "estado": "provisional"
         },
         "rendimiento": {
-          "valor": 51.74,
-          "estado": "estimado"
+          "valor": 54.87,
+          "estado": "provisional"
         },
         "consumo_diesel": {
           "valor": 1.71,
-          "estado": "estimado"
+          "estado": "provisional"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -447,18 +447,18 @@
       {
         "id": "Lote 4",
         "variedad": "NA-5226",
-        "estado_proceso": "pendiente",
+        "estado_proceso": "en_proceso",
         "superficie_ha": {
           "valor": 5.84,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "Pendiente",
-          "estado": "pendiente"
+          "valor": "En proceso",
+          "estado": "en_proceso"
         },
         "fecha_inicio": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "7 ago",
+          "estado": "confirmado"
         },
         "fecha_fin": {
           "valor": null,
@@ -484,18 +484,18 @@
       {
         "id": "Lote 5",
         "variedad": "Cittca-8522",
-        "estado_proceso": "pendiente",
+        "estado_proceso": "en_proceso",
         "superficie_ha": {
           "valor": 6.32,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "Pendiente",
-          "estado": "pendiente"
+          "valor": "En proceso",
+          "estado": "en_proceso"
         },
         "fecha_inicio": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "7 ago",
+          "estado": "confirmado"
         },
         "fecha_fin": {
           "valor": null,
@@ -521,18 +521,18 @@
       {
         "id": "Lote 6",
         "variedad": "Cittca-8522, UCG-9020",
-        "estado_proceso": "pendiente",
+        "estado_proceso": "en_proceso",
         "superficie_ha": {
           "valor": 6.27,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "Pendiente",
-          "estado": "pendiente"
+          "valor": "En proceso",
+          "estado": "en_proceso"
         },
         "fecha_inicio": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "7 ago",
+          "estado": "confirmado"
         },
         "fecha_fin": {
           "valor": null,
@@ -558,18 +558,18 @@
       {
         "id": "Lote 7",
         "variedad": "Cittca-8522, UCG-9020",
-        "estado_proceso": "pendiente",
+        "estado_proceso": "en_proceso",
         "superficie_ha": {
           "valor": 6.32,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "Pendiente",
-          "estado": "pendiente"
+          "valor": "En proceso",
+          "estado": "en_proceso"
         },
         "fecha_inicio": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "7 ago",
+          "estado": "confirmado"
         },
         "fecha_fin": {
           "valor": null,
@@ -669,14 +669,14 @@
       {
         "id": "Lote 15",
         "variedad": "UCG-9020, MUYURINA, NA-5226, UCG-9610",
-        "estado_proceso": "provisional",
+        "estado_proceso": "confirmado",
         "superficie_ha": {
           "valor": 7.26,
           "estado": "confirmado"
         },
         "estado_carga": {
           "valor": "Terminado",
-          "estado": "provisional"
+          "estado": "confirmado"
         },
         "fecha_inicio": {
           "valor": "28 jul",
@@ -687,16 +687,16 @@
           "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 505.82,
-          "estado": "provisional"
+          "valor": 422.74,
+          "estado": "confirmado"
         },
         "rendimiento": {
-          "valor": 69.67,
-          "estado": "provisional"
+          "valor": 58.23,
+          "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 1,
-          "estado": "provisional"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -798,11 +798,11 @@
           "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 190,
+          "valor": 222.97,
           "estado": "confirmado"
         },
         "rendimiento": {
-          "valor": 23.93,
+          "valor": 28.08,
           "estado": "confirmado"
         },
         "consumo_diesel": {
