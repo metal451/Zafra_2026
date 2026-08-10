@@ -1000,5 +1000,21 @@
         }
       }
     ]
+  },
+  "diesel": {
+    "resumen": {
+      "diesel_restante_litros": {
+        "valor": 9769.5,
+        "estado": "confirmado"
+      },
+      "diesel_consumido_acumulado_litros": {
+        "valor": 8300,
+        "estado": "confirmado"
+      },
+      "diesel_litros_por_tonelada": {
+        "valor": 1.85,
+        "estado": "confirmado"
+      }
+    }
   }
 }
