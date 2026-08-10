@@ -70,6 +70,7 @@
             <nav class="flex gap-4">
                 <a href="#" data-nav-btn="resumen" onclick="mostrarVista('resumen'); return false;" class="text-green-700 font-bold border-b-2 border-green-700 pb-1">Resumen</a>
                 <a href="#" data-nav-btn="lotes" onclick="mostrarVista('lotes'); return false;" class="text-gray-500 hover:text-green-700 pb-1">Lotes</a>
+                <a href="#" data-nav-btn="diesel" onclick="mostrarVista('diesel'); return false;" class="text-gray-500 hover:text-green-700 pb-1">Diésel</a>
             </nav>
             <div class="flex items-center gap-2 bg-yellow-100 text-yellow-800 px-3 py-1.5 rounded-full text-xs font-semibold">
                 <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
@@ -176,6 +177,22 @@
                     <div class="flex items-baseline gap-1">
                         <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="rendimiento_medio">—</span>
                         <span class="text-base font-medium text-gray-500">t/ha</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-gray-500 tracking-wider uppercase mb-1">Diésel Restante</p>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="diesel_restante">—</span>
+                        <span class="text-base font-medium text-gray-500">lt</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100 flex flex-col justify-between min-h-32">
+                    <p class="text-sm font-bold text-gray-500 tracking-wider uppercase mb-1">Litros / Tonelada</p>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="diesel_litros_por_tonelada">—</span>
+                        <span class="text-base font-medium text-gray-500">lt/t</span>
                     </div>
                 </div>
 
@@ -304,6 +321,39 @@
         </div>
 
         <div id="grid-lotes" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+
+    <!-- Section 4: Diésel -->
+    <div class="mb-8" data-vista="diesel" hidden>
+        <p class="text-xs font-bold text-green-700 tracking-wider mb-1 uppercase">CONSUMO DE COMBUSTIBLE</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-dark-green tracking-tight mb-6">Diésel</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="bg-card-light-green rounded-3xl p-6 card-shadow border border-green-50">
+                <p class="text-sm font-bold text-green-800 tracking-wider uppercase mb-1">Diésel Restante</p>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="diesel_tab_restante">—</span>
+                    <span class="text-base font-medium text-green-800">lt</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-3xl p-6 card-shadow border border-gray-100">
+                <p class="text-sm font-bold text-gray-500 tracking-wider uppercase mb-1">Consumido Acumulado</p>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="diesel_consumido_acumulado">—</span>
+                    <span class="text-base font-medium text-gray-500">lt</span>
+                </div>
+            </div>
+            <div class="bg-card-beige rounded-3xl p-6 card-shadow border border-yellow-50">
+                <p class="text-sm font-bold text-yellow-800 tracking-wider uppercase mb-1">Litros / Tonelada</p>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-dark-green tracking-tight" data-field="diesel_tab_litros_por_tonelada">—</span>
+                    <span class="text-base font-medium text-yellow-800">lt/t</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-xs font-bold text-green-700 tracking-wider mb-4 uppercase">Consumo por equipo</p>
+        <div id="grid-diesel" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
     </div>
 
     <!-- Footer Status -->
@@ -571,6 +621,15 @@
       pintar('rendimiento_medio', formatearNumero(ind.rendimiento_medio.valor, 1), ind.rendimiento_medio.estado);
       pintarAtributo('avance_gauge_path', 'stroke-dasharray', ind.avance_pct.valor + ', 100');
       pintar('toneladas_periodo', formatearNumero(c.resumen_diario.toneladas_periodo.valor, 0) + ' t', c.resumen_diario.toneladas_periodo.estado);
+
+      // Diésel en pantalla principal — lee de c.diesel.resumen, misma fuente
+      // que usa la pestaña Diésel. No es un dato duplicado.
+      // Si el contrato no trae c.diesel todavía, se pinta explícitamente
+      // como sin_dato (—) en vez de dejar pegado el último valor: null
+      // nunca debe parecer un dato vigente.
+      const dr = (c.diesel && c.diesel.resumen) ? c.diesel.resumen : null;
+      pintar('diesel_restante', dr ? formatearNumero(dr.diesel_restante_litros.valor, 0) : '—', dr ? dr.diesel_restante_litros.estado : 'sin_dato');
+      pintar('diesel_litros_por_tonelada', dr ? formatearNumero(dr.diesel_litros_por_tonelada.valor, 2) : '—', dr ? dr.diesel_litros_por_tonelada.estado : 'sin_dato');
     }
 
     // NUEVA FUNCIÓN: Extrae qué lote o lotes están en proceso activo y lo presenta en Avance Acumulado.
@@ -720,6 +779,39 @@
         : '<p class="text-sm text-gray-400 italic md:col-span-2 text-center py-8">Sin lotes registrados todavía.</p>';
     }
 
+    // Plantilla de una tarjeta de equipo — mismo patrón que crearTarjetaLote:
+    // Zona Fija sin datos propios, todo entra por parámetro.
+    function crearTarjetaEquipo(equipo) {
+      const tieneRatio = equipo.litros_por_tonelada && equipo.litros_por_tonelada.valor !== null;
+      const tieneHorometro = equipo.horometro_actual && equipo.horometro_actual.valor !== null;
+      return '' +
+        '<div class="rounded-3xl p-6 card-shadow border bg-white border-gray-100">' +
+          '<h3 class="text-2xl font-bold text-dark-green mb-3">' + formatearTexto(equipo.equipo) + '</h3>' +
+          '<div class="grid grid-cols-2 gap-y-3 gap-x-4 border-t border-gray-100 pt-4 text-base">' +
+            campoLote('Litros consumidos', formatearNumero(equipo.litros_consumidos.valor, 0) + ' lt', equipo.litros_consumidos.estado) +
+            campoLote('Litros / Tonelada', tieneRatio ? (formatearNumero(equipo.litros_por_tonelada.valor, 2) + ' lt/t') : '—', tieneRatio ? equipo.litros_por_tonelada.estado : 'sin_dato') +
+            campoLote('Última carga', formatearTexto(equipo.ultima_carga_fecha.valor), equipo.ultima_carga_fecha.estado) +
+            campoLote('Horómetro actual', tieneHorometro ? formatearNumero(equipo.horometro_actual.valor, 1) : '—', tieneHorometro ? equipo.horometro_actual.estado : 'sin_dato') +
+          '</div>' +
+        '</div>';
+    }
+
+    function renderDiesel(c) {
+      // Si el contrato todavía no trae c.diesel, se pinta explícitamente
+      // como sin_dato en vez de dejar pegado el último valor bueno.
+      const r = (c.diesel && c.diesel.resumen) ? c.diesel.resumen : null;
+      pintar('diesel_tab_restante', r ? formatearNumero(r.diesel_restante_litros.valor, 0) : '—', r ? r.diesel_restante_litros.estado : 'sin_dato');
+      pintar('diesel_consumido_acumulado', r ? formatearNumero(r.diesel_consumido_acumulado_litros.valor, 0) : '—', r ? r.diesel_consumido_acumulado_litros.estado : 'sin_dato');
+      pintar('diesel_tab_litros_por_tonelada', r ? formatearNumero(r.diesel_litros_por_tonelada.valor, 2) : '—', r ? r.diesel_litros_por_tonelada.estado : 'sin_dato');
+
+      const grid = document.getElementById('grid-diesel');
+      if (!grid) return;
+      const items = (c.diesel && c.diesel.por_equipo) ? c.diesel.por_equipo : [];
+      grid.innerHTML = items.length
+        ? items.map(crearTarjetaEquipo).join('')
+        : '<p class="text-sm text-gray-400 italic md:col-span-2 text-center py-8">Sin datos de diésel todavía.</p>';
+    }
+
     // Alterna entre la vista Resumen y la vista Lotes — no recarga la
     // página, solo muestra/oculta los bloques marcados con data-vista.
     function mostrarVista(nombre) {
@@ -746,6 +838,7 @@
       renderUltimoDia(c);
       renderEstadoOperativo(c);
       renderLotes(c);
+      renderDiesel(c);
       if (chart) {
         chart.data.labels = c.historico_diario.map(function (d) { return d.fecha; });
         chart.data.datasets[0].data = c.historico_diario.map(function (d) { return d.toneladas.total.valor; });
