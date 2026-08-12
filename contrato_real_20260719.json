@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "9 ago, 23:17",
+    "ultima_actualizacion": "11 ago, 19:56",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -18,23 +18,23 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 3480.7,
+      "valor": 3536.8,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
-      "valor": 2999.97,
+      "valor": 3398.16,
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 480.73,
+      "valor": 138.64,
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": 3326.34,
+      "valor": 3794.29,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
-      "valor": 11.21,
+      "valor": 11.1,
       "estado": "confirmado"
     },
     "rendimiento_medio": {
@@ -44,7 +44,7 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 1065.17,
+      "valor": 1121.27,
       "estado": "estimado"
     }
   },
@@ -164,16 +164,16 @@
       "fecha": "8 ago",
       "toneladas": {
         "total": {
-          "valor": 289.11,
-          "estado": "estimado"
+          "valor": 260.9,
+          "estado": "confirmado"
         },
         "confirmadas": {
-          "valor": 0,
+          "valor": 260.9,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 289.11,
-          "estado": "estimado"
+          "valor": 0,
+          "estado": "confirmado"
         }
       },
       "camiones_cargados": {
@@ -189,27 +189,27 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": 11.75,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": 340.41,
+        "estado": "confirmado"
       }
     },
     {
       "fecha": "9 ago",
       "toneladas": {
         "total": {
-          "valor": 191.62,
+          "valor": 182.04,
           "estado": "estimado"
         },
         "confirmadas": {
-          "valor": 0,
+          "valor": 137.29,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 191.62,
+          "valor": 44.75,
           "estado": "estimado"
         }
       },
@@ -222,16 +222,16 @@
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido; Lote 4",
+        "valor": "Lote 4; Lote 5, Lote 6, Lote 7 — origen compartido",
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": 11.5,
+        "estado": "provisional"
       },
       "quintales": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": 127.54,
+        "estado": "provisional"
       }
     },
     {
@@ -275,7 +275,7 @@
       "fecha": "11 ago",
       "toneladas": {
         "total": {
-          "valor": 0,
+          "valor": 93.89,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -283,21 +283,21 @@
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
+          "valor": 93.89,
+          "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 0,
+        "valor": 2,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 0,
+        "valor": 4,
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido",
+        "estado": "confirmado"
       },
       "sacarosa": {
         "valor": null,
@@ -310,9 +310,9 @@
     }
   ],
   "estado_operativo": {
-    "estado": "normal",
-    "titulo": "Operación normal",
-    "detalle": "Sin alertas activas"
+    "estado": "alerta",
+    "titulo": "pernos rotos en extractor primario",
+    "detalle": "se rompieron seis pernos de los que sostienen el extractor primario"
   },
   "lotes": {
     "resumen": {
@@ -465,11 +465,11 @@
           "estado": "sin_dato"
         },
         "toneladas_totales": {
-          "valor": 54.56,
+          "valor": 217.32,
           "estado": "estimado"
         },
         "rendimiento": {
-          "valor": 9.34,
+          "valor": 37.21,
           "estado": "estimado"
         },
         "consumo_diesel": {
@@ -502,16 +502,16 @@
           "estado": "sin_dato"
         },
         "toneladas_totales": {
-          "valor": 19.36,
+          "valor": 98.05,
           "estado": "estimado"
         },
         "rendimiento": {
-          "valor": 3.06,
+          "valor": 15.51,
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 3.97,
-          "estado": "estimado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -539,16 +539,16 @@
           "estado": "sin_dato"
         },
         "toneladas_totales": {
-          "valor": 19.21,
+          "valor": 97.27,
           "estado": "estimado"
         },
         "rendimiento": {
-          "valor": 3.06,
+          "valor": 15.51,
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 3.97,
-          "estado": "estimado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -576,16 +576,16 @@
           "estado": "sin_dato"
         },
         "toneladas_totales": {
-          "valor": 19.36,
+          "valor": 98.05,
           "estado": "estimado"
         },
         "rendimiento": {
-          "valor": 3.06,
+          "valor": 15.51,
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 3.97,
-          "estado": "estimado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -1004,15 +1004,15 @@
   "diesel": {
     "resumen": {
       "diesel_restante_litros": {
-        "valor": 9769.5,
+        "valor": 9524.5,
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
-        "valor": 8300,
+        "valor": 8500,
         "estado": "confirmado"
       },
       "diesel_litros_por_tonelada": {
-        "valor": 1.83,
+        "valor": 1.8,
         "estado": "confirmado"
       }
     }
