@@ -44,48 +44,11 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 1121.27,
+      "valor": 1006.76,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "5 ago",
-      "toneladas": {
-        "total": {
-          "valor": 114.51,
-          "estado": "confirmado"
-        },
-        "confirmadas": {
-          "valor": 114.51,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 3,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 4,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 2, Lote 3 — origen compartido",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 10.37,
-        "estado": "confirmado"
-      },
-      "quintales": {
-        "valor": 117.47,
-        "estado": "confirmado"
-      }
-    },
     {
       "fecha": "6 ago",
       "toneladas": {
@@ -307,12 +270,49 @@
         "valor": null,
         "estado": "sin_dato"
       }
+    },
+    {
+      "fecha": "12 ago",
+      "toneladas": {
+        "total": {
+          "valor": 0,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 0,
+          "estado": "confirmado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
     }
   ],
   "estado_operativo": {
-    "estado": "alerta",
-    "titulo": "pernos rotos en extractor primario",
-    "detalle": "se rompieron seis pernos de los que sostienen el extractor primario"
+    "estado": "normal",
+    "titulo": "Operación normal",
+    "detalle": "Sin alertas activas"
   },
   "lotes": {
     "resumen": {
@@ -1008,11 +1008,11 @@
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
-        "valor": 8500,
+        "valor": 8955,
         "estado": "confirmado"
       },
       "diesel_litros_por_tonelada": {
-        "valor": 1.8,
+        "valor": 1.87,
         "estado": "confirmado"
       }
     }
