@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "11 ago, 19:56",
+    "ultima_actualizacion": "12 ago, 12:50",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -18,7 +18,7 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 3536.8,
+      "valor": 3629.34,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
@@ -26,7 +26,7 @@
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 138.64,
+      "valor": 231.18,
       "estado": "estimado"
     },
     "quintales_acumulados": {
@@ -44,48 +44,11 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 1006.76,
+      "valor": 911.35,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "6 ago",
-      "toneladas": {
-        "total": {
-          "valor": 187.95,
-          "estado": "confirmado"
-        },
-        "confirmadas": {
-          "valor": 187.95,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 4,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 8,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 2, Lote 3 — origen compartido",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 11.19,
-        "estado": "confirmado"
-      },
-      "quintales": {
-        "valor": 208.09,
-        "estado": "confirmado"
-      }
-    },
     {
       "fecha": "7 ago",
       "toneladas": {
@@ -275,6 +238,43 @@
       "fecha": "12 ago",
       "toneladas": {
         "total": {
+          "valor": 92.54,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 92.54,
+          "estado": "estimado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 2,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 4,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido",
+        "estado": "confirmado"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
+    },
+    {
+      "fecha": "13 ago",
+      "toneladas": {
+        "total": {
           "valor": 0,
           "estado": "estimado"
         },
@@ -310,9 +310,9 @@
     }
   ],
   "estado_operativo": {
-    "estado": "normal",
-    "titulo": "Operación normal",
-    "detalle": "Sin alertas activas"
+    "estado": "alerta",
+    "titulo": "Ingenio parado",
+    "detalle": ""
   },
   "lotes": {
     "resumen": {
@@ -473,8 +473,8 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": 7.74,
+          "estado": "estimado"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -510,8 +510,8 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": 2.41,
+          "estado": "estimado"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -547,8 +547,8 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": 2.41,
+          "estado": "estimado"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -584,8 +584,8 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": 2.41,
+          "estado": "estimado"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -1008,11 +1008,11 @@
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
-        "valor": 8955,
+        "valor": 9405,
         "estado": "confirmado"
       },
       "diesel_litros_por_tonelada": {
-        "valor": 1.87,
+        "valor": 1.95,
         "estado": "confirmado"
       }
     }
