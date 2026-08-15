@@ -1,16 +1,16 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "14 ago, 05:25",
+    "ultima_actualizacion": "15 ago, 09:20",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
     "avance_pct": {
-      "valor": 43.79,
+      "valor": 58.39,
       "estado": "confirmado"
     },
     "ha_cosechadas": {
-      "valor": 56.73,
+      "valor": 75.64,
       "estado": "confirmado"
     },
     "ha_programadas": {
@@ -18,33 +18,33 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 3726.21,
+      "valor": 3804.52,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
-      "valor": 3438.43,
+      "valor": 3764.25,
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 287.78,
+      "valor": 40.27,
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": 3794.29,
+      "valor": 4101.56,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
-      "valor": 10.97,
+      "valor": 11.01,
       "estado": "confirmado"
     },
     "rendimiento_medio": {
-      "valor": 50.9,
+      "valor": 45.08,
       "estado": "confirmado"
     }
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 465.34,
+      "valor": 543.65,
       "estado": "estimado"
     }
   },
@@ -53,24 +53,24 @@
       "fecha": "9 ago",
       "toneladas": {
         "total": {
-          "valor": 182.04,
-          "estado": "estimado"
+          "valor": 183.91,
+          "estado": "confirmado"
         },
         "confirmadas": {
-          "valor": 137.29,
+          "valor": 183.91,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 44.75,
-          "estado": "estimado"
+          "valor": 0,
+          "estado": "confirmado"
         }
       },
       "camiones_cargados": {
-        "valor": 4,
+        "valor": 0,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 8,
+        "valor": 0,
         "estado": "confirmado"
       },
       "lote_grupo": {
@@ -78,12 +78,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": 11.5,
-        "estado": "provisional"
+        "valor": 11.49,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": 127.54,
-        "estado": "provisional"
+        "valor": 209.06,
+        "estado": "confirmado"
       }
     },
     {
@@ -127,131 +127,131 @@
       "fecha": "11 ago",
       "toneladas": {
         "total": {
-          "valor": 88.06,
-          "estado": "estimado"
+          "valor": 133.09,
+          "estado": "confirmado"
         },
         "confirmadas": {
-          "valor": 40.27,
+          "valor": 133.09,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 47.79,
-          "estado": "estimado"
+          "valor": 0,
+          "estado": "confirmado"
         }
       },
       "camiones_cargados": {
-        "valor": 2,
+        "valor": 0,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 4,
+        "valor": 0,
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido",
+        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido; Lote 4",
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 11.09,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 146,
+        "estado": "confirmado"
       }
     },
     {
       "fecha": "12 ago",
       "toneladas": {
         "total": {
-          "valor": 92.54,
-          "estado": "estimado"
+          "valor": 95.59,
+          "estado": "confirmado"
         },
         "confirmadas": {
-          "valor": 0,
+          "valor": 95.59,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 92.54,
-          "estado": "estimado"
+          "valor": 0,
+          "estado": "confirmado"
         }
       },
       "camiones_cargados": {
-        "valor": 2,
+        "valor": 0,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 4,
+        "valor": 0,
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido",
+        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido; Lote 4",
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": 12.38,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": 117.02,
+        "estado": "confirmado"
       }
     },
     {
       "fecha": "13 ago",
       "toneladas": {
         "total": {
-          "valor": 88.06,
+          "valor": 84.89,
           "estado": "estimado"
         },
         "confirmadas": {
-          "valor": 0,
+          "valor": 44.62,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 88.06,
+          "valor": 40.27,
           "estado": "estimado"
         }
       },
       "camiones_cargados": {
-        "valor": 2,
+        "valor": 0,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
-        "valor": 4,
+        "valor": 0,
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido",
+        "valor": "Lote 1",
         "estado": "confirmado"
       },
       "sacarosa": {
         "valor": null,
-        "estado": "sin_dato"
+        "estado": "pendiente"
       },
       "quintales": {
         "valor": null,
-        "estado": "sin_dato"
+        "estado": "pendiente"
       }
     },
     {
       "fecha": "14 ago",
       "toneladas": {
         "total": {
-          "valor": 14.64,
-          "estado": "estimado"
+          "valor": 16.72,
+          "estado": "confirmado"
         },
         "confirmadas": {
-          "valor": 0,
+          "valor": 16.72,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 14.64,
-          "estado": "estimado"
+          "valor": 0,
+          "estado": "confirmado"
         }
       },
       "camiones_cargados": {
-        "valor": 1,
+        "valor": 0,
         "estado": "confirmado"
       },
       "chatas_cargadas": {
@@ -259,27 +259,27 @@
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido",
+        "valor": "Lote 1",
         "estado": "confirmado"
       },
       "sacarosa": {
         "valor": null,
-        "estado": "sin_dato"
+        "estado": "pendiente"
       },
       "quintales": {
         "valor": null,
-        "estado": "sin_dato"
+        "estado": "pendiente"
       }
     },
     {
       "fecha": "15 ago",
       "toneladas": {
         "total": {
-          "valor": 0,
-          "estado": "estimado"
+          "valor": 29.45,
+          "estado": "confirmado"
         },
         "confirmadas": {
-          "valor": 0,
+          "valor": 29.45,
           "estado": "confirmado"
         },
         "por_confirmar": {
@@ -296,16 +296,16 @@
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": "Lote 1",
+        "estado": "confirmado"
       },
       "sacarosa": {
         "valor": null,
-        "estado": "sin_dato"
+        "estado": "pendiente"
       },
       "quintales": {
         "valor": null,
-        "estado": "sin_dato"
+        "estado": "pendiente"
       }
     }
   ],
@@ -317,18 +317,18 @@
   "lotes": {
     "resumen": {
       "terminados": {
-        "cantidad": 8,
-        "ha": 56.73,
+        "cantidad": 11,
+        "ha": 75.64,
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 4,
-        "ha": 24.75,
+        "cantidad": 2,
+        "ha": 13.08,
         "estado": "confirmado"
       },
       "pendientes": {
-        "cantidad": 6,
-        "ha": 48.07,
+        "cantidad": 5,
+        "ha": 40.83,
         "estado": "confirmado"
       }
     },
@@ -336,30 +336,30 @@
       {
         "id": "Lote 1",
         "variedad": "Cittca-8522",
-        "estado_proceso": "pendiente",
+        "estado_proceso": "en_proceso",
         "superficie_ha": {
           "valor": 7.24,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "Pendiente",
-          "estado": "pendiente"
+          "valor": "En proceso",
+          "estado": "en_proceso"
         },
         "fecha_inicio": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "13 ago",
+          "estado": "confirmado"
         },
         "fecha_fin": {
           "valor": null,
           "estado": "sin_dato"
         },
         "toneladas_totales": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": 90.79,
+          "estado": "estimado"
         },
         "rendimiento": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": 12.54,
+          "estado": "estimado"
         },
         "consumo_diesel": {
           "valor": null,
@@ -399,8 +399,8 @@
           "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 1.72,
-          "estado": "confirmado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -436,8 +436,8 @@
           "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 1.72,
-          "estado": "confirmado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -465,16 +465,16 @@
           "estado": "sin_dato"
         },
         "toneladas_totales": {
-          "valor": 217.32,
+          "valor": 331.03,
           "estado": "estimado"
         },
         "rendimiento": {
-          "valor": 37.21,
+          "valor": 56.68,
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 7.74,
-          "estado": "estimado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -484,34 +484,34 @@
       {
         "id": "Lote 5",
         "variedad": "Cittca-8522",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "confirmado",
         "superficie_ha": {
           "valor": 6.32,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "confirmado"
         },
         "fecha_inicio": {
           "valor": "7 ago",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "12 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 111.5,
-          "estado": "estimado"
+          "valor": 152.05,
+          "estado": "confirmado"
         },
         "rendimiento": {
-          "valor": 17.64,
-          "estado": "estimado"
+          "valor": 24.06,
+          "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 3.64,
-          "estado": "estimado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -521,34 +521,34 @@
       {
         "id": "Lote 6",
         "variedad": "Cittca-8522, UCG-9020",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "confirmado",
         "superficie_ha": {
           "valor": 6.27,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "confirmado"
         },
         "fecha_inicio": {
           "valor": "7 ago",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "12 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 110.62,
-          "estado": "estimado"
+          "valor": 150.85,
+          "estado": "confirmado"
         },
         "rendimiento": {
-          "valor": 17.64,
-          "estado": "estimado"
+          "valor": 24.06,
+          "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 3.64,
-          "estado": "estimado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -558,34 +558,34 @@
       {
         "id": "Lote 7",
         "variedad": "Cittca-8522, UCG-9020",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "confirmado",
         "superficie_ha": {
           "valor": 6.32,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "confirmado"
         },
         "fecha_inicio": {
           "valor": "7 ago",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "12 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 111.5,
-          "estado": "estimado"
+          "valor": 152.05,
+          "estado": "confirmado"
         },
         "rendimiento": {
-          "valor": 17.64,
-          "estado": "estimado"
+          "valor": 24.06,
+          "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 3.64,
-          "estado": "estimado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -880,8 +880,8 @@
           "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 1.67,
-          "estado": "confirmado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -917,8 +917,8 @@
           "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 1.84,
-          "estado": "confirmado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -954,8 +954,8 @@
           "estado": "confirmado"
         },
         "consumo_diesel": {
-          "valor": 1.84,
-          "estado": "confirmado"
+          "valor": null,
+          "estado": "sin_dato"
         },
         "sacarosa_promedio": {
           "valor": null,
@@ -1012,7 +1012,7 @@
         "estado": "confirmado"
       },
       "diesel_litros_por_tonelada": {
-        "valor": 2.05,
+        "valor": 2.01,
         "estado": "confirmado"
       }
     }
