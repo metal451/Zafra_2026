@@ -44,48 +44,11 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 726.24,
+      "valor": 465.34,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "8 ago",
-      "toneladas": {
-        "total": {
-          "valor": 260.9,
-          "estado": "confirmado"
-        },
-        "confirmadas": {
-          "valor": 260.9,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 6,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 12,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 4; Lote 5, Lote 6, Lote 7 — origen compartido",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 11.75,
-        "estado": "confirmado"
-      },
-      "quintales": {
-        "valor": 340.41,
-        "estado": "confirmado"
-      }
-    },
     {
       "fecha": "9 ago",
       "toneladas": {
@@ -307,6 +270,43 @@
         "valor": null,
         "estado": "sin_dato"
       }
+    },
+    {
+      "fecha": "15 ago",
+      "toneladas": {
+        "total": {
+          "valor": 0,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 0,
+          "estado": "confirmado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
     }
   ],
   "estado_operativo": {
@@ -510,7 +510,7 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 2.49,
+          "valor": 3.64,
           "estado": "estimado"
         },
         "sacarosa_promedio": {
@@ -547,7 +547,7 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 2.49,
+          "valor": 3.64,
           "estado": "estimado"
         },
         "sacarosa_promedio": {
@@ -584,7 +584,7 @@
           "estado": "estimado"
         },
         "consumo_diesel": {
-          "valor": 2.49,
+          "valor": 3.64,
           "estado": "estimado"
         },
         "sacarosa_promedio": {
@@ -1008,11 +1008,11 @@
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
-        "valor": 9405,
+        "valor": 9985,
         "estado": "confirmado"
       },
       "diesel_litros_por_tonelada": {
-        "valor": 1.9,
+        "valor": 2.05,
         "estado": "confirmado"
       }
     }
