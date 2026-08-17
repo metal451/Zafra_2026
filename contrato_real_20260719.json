@@ -6,11 +6,11 @@
   },
   "indicadores_generales": {
     "avance_pct": {
-      "valor": 58.39,
+      "valor": 63.98,
       "estado": "confirmado"
     },
     "ha_cosechadas": {
-      "valor": 75.64,
+      "valor": 82.88,
       "estado": "confirmado"
     },
     "ha_programadas": {
@@ -34,7 +34,7 @@
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
-      "valor": 10.88,
+      "valor": 11.29,
       "estado": "confirmado"
     },
     "rendimiento_medio": {
@@ -152,12 +152,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 12.28,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 0,
+        "estado": "confirmado"
       }
     },
     {
@@ -189,12 +189,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 11.23,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 0,
+        "estado": "confirmado"
       }
     },
     {
@@ -226,12 +226,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 10.85,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 61.21,
+        "estado": "confirmado"
       }
     },
     {
@@ -317,13 +317,13 @@
   "lotes": {
     "resumen": {
       "terminados": {
-        "cantidad": 11,
-        "ha": 75.64,
+        "cantidad": 12,
+        "ha": 82.88,
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 2,
-        "ha": 13.08,
+        "cantidad": 1,
+        "ha": 5.84,
         "estado": "confirmado"
       },
       "pendientes": {
@@ -336,30 +336,30 @@
       {
         "id": "Lote 1",
         "variedad": "Cittca-8522",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "provisional",
         "superficie_ha": {
           "valor": 7.24,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "provisional"
         },
         "fecha_inicio": {
           "valor": "13 ago",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "16 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
           "valor": 137.38,
-          "estado": "estimado"
+          "estado": "provisional"
         },
         "rendimiento": {
           "valor": 18.98,
-          "estado": "estimado"
+          "estado": "provisional"
         },
         "consumo_diesel": {
           "valor": null,
