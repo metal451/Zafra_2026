@@ -6,11 +6,11 @@
   },
   "indicadores_generales": {
     "avance_pct": {
-      "valor": 63.98,
+      "valor": 68.48,
       "estado": "confirmado"
     },
     "ha_cosechadas": {
-      "valor": 82.88,
+      "valor": 88.72,
       "estado": "confirmado"
     },
     "ha_programadas": {
@@ -38,7 +38,7 @@
       "estado": "confirmado"
     },
     "rendimiento_medio": {
-      "valor": 45.08,
+      "valor": 45.28,
       "estado": "confirmado"
     }
   },
@@ -222,7 +222,7 @@
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": "Lote 1",
+        "valor": "Lote 4; Lote 1",
         "estado": "confirmado"
       },
       "sacarosa": {
@@ -317,13 +317,13 @@
   "lotes": {
     "resumen": {
       "terminados": {
-        "cantidad": 12,
-        "ha": 82.88,
+        "cantidad": 13,
+        "ha": 88.72,
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 1,
-        "ha": 5.84,
+        "cantidad": 0,
+        "ha": 0,
         "estado": "confirmado"
       },
       "pendientes": {
@@ -354,11 +354,11 @@
           "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 137.38,
+          "valor": 121.74,
           "estado": "provisional"
         },
         "rendimiento": {
-          "valor": 18.98,
+          "valor": 16.81,
           "estado": "provisional"
         },
         "consumo_diesel": {
@@ -447,30 +447,30 @@
       {
         "id": "Lote 4",
         "variedad": "NA-5226",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "confirmado",
         "superficie_ha": {
           "valor": 5.84,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "confirmado"
         },
         "fecha_inicio": {
           "valor": "7 ago",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "15 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
-          "valor": 331.03,
-          "estado": "estimado"
+          "valor": 346.67,
+          "estado": "confirmado"
         },
         "rendimiento": {
-          "valor": 56.68,
-          "estado": "estimado"
+          "valor": 59.36,
+          "estado": "confirmado"
         },
         "consumo_diesel": {
           "valor": null,
