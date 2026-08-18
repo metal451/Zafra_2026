@@ -6,11 +6,11 @@
   },
   "indicadores_generales": {
     "avance_pct": {
-      "valor": 62.89,
+      "valor": 68.48,
       "estado": "confirmado"
     },
     "ha_cosechadas": {
-      "valor": 81.48,
+      "valor": 88.72,
       "estado": "confirmado"
     },
     "ha_programadas": {
@@ -310,20 +310,20 @@
     }
   ],
   "estado_operativo": {
-    "estado": "alerta",
-    "titulo": "Ingenio parado",
-    "detalle": ""
+    "estado": "normal",
+    "titulo": "Operación normal",
+    "detalle": "Sin alertas activas"
   },
   "lotes": {
     "resumen": {
       "terminados": {
-        "cantidad": 12,
-        "ha": 81.48,
+        "cantidad": 13,
+        "ha": 88.72,
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 2,
-        "ha": 12.54,
+        "cantidad": 1,
+        "ha": 5.3,
         "estado": "confirmado"
       },
       "pendientes": {
@@ -336,30 +336,30 @@
       {
         "id": "Lote 1",
         "variedad": "Cittca-8522",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "provisional",
         "superficie_ha": {
           "valor": 7.24,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "provisional"
         },
         "fecha_inicio": {
           "valor": "13 ago",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "14 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
           "valor": 367.05,
-          "estado": "estimado"
+          "estado": "provisional"
         },
         "rendimiento": {
           "valor": 50.7,
-          "estado": "estimado"
+          "estado": "provisional"
         },
         "consumo_diesel": {
           "valor": null,
