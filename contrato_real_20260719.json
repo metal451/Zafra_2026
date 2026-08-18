@@ -44,48 +44,11 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 619.88,
+      "valor": 486.79,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "11 ago",
-      "toneladas": {
-        "total": {
-          "valor": 133.09,
-          "estado": "confirmado"
-        },
-        "confirmadas": {
-          "valor": 133.09,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido; Lote 4",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 11.09,
-        "estado": "confirmado"
-      },
-      "quintales": {
-        "valor": 146,
-        "estado": "confirmado"
-      }
-    },
     {
       "fecha": "12 ago",
       "toneladas": {
@@ -298,6 +261,43 @@
       "lote_grupo": {
         "valor": "Lote 16",
         "estado": "confirmado"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
+    },
+    {
+      "fecha": "18 ago",
+      "toneladas": {
+        "total": {
+          "valor": 0,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 0,
+          "estado": "confirmado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": null,
+        "estado": "sin_dato"
       },
       "sacarosa": {
         "valor": null,
