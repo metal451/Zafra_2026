@@ -44,48 +44,11 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 548.79,
+      "valor": 453.2,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "12 ago",
-      "toneladas": {
-        "total": {
-          "valor": 95.59,
-          "estado": "confirmado"
-        },
-        "confirmadas": {
-          "valor": 95.59,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 5, Lote 6, Lote 7 — origen compartido; Lote 4",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 12.38,
-        "estado": "confirmado"
-      },
-      "quintales": {
-        "valor": 117.02,
-        "estado": "confirmado"
-      }
-    },
     {
       "fecha": "13 ago",
       "toneladas": {
@@ -276,6 +239,43 @@
       "toneladas": {
         "total": {
           "valor": 0,
+          "estado": "confirmado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 0,
+          "estado": "confirmado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
+    },
+    {
+      "fecha": "19 ago",
+      "toneladas": {
+        "total": {
+          "valor": 0,
           "estado": "estimado"
         },
         "confirmadas": {
@@ -310,9 +310,9 @@
     }
   ],
   "estado_operativo": {
-    "estado": "normal",
-    "titulo": "Operación normal",
-    "detalle": "Sin alertas activas"
+    "estado": "alerta",
+    "titulo": "Lloviendo de sur",
+    "detalle": ""
   },
   "lotes": {
     "resumen": {
@@ -1004,7 +1004,7 @@
   "diesel": {
     "resumen": {
       "diesel_restante_litros": {
-        "valor": 7219.5,
+        "valor": 6995.5,
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
