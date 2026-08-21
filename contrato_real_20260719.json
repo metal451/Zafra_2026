@@ -44,48 +44,11 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 364.84,
+      "valor": 299.01,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "14 ago",
-      "toneladas": {
-        "total": {
-          "valor": 65.83,
-          "estado": "confirmado"
-        },
-        "confirmadas": {
-          "valor": 65.83,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": "Lote 1",
-        "estado": "confirmado"
-      },
-      "sacarosa": {
-        "valor": 11.56,
-        "estado": "confirmado"
-      },
-      "quintales": {
-        "valor": 75.3,
-        "estado": "confirmado"
-      }
-    },
     {
       "fecha": "15 ago",
       "toneladas": {
@@ -273,6 +236,43 @@
     },
     {
       "fecha": "20 ago",
+      "toneladas": {
+        "total": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 0,
+          "estado": "confirmado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
+    },
+    {
+      "fecha": "21 ago",
       "toneladas": {
         "total": {
           "valor": 0,
@@ -1004,11 +1004,11 @@
   "diesel": {
     "resumen": {
       "diesel_restante_litros": {
-        "valor": 6995.5,
+        "valor": 6961.5,
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
-        "valor": 10893,
+        "valor": 10927,
         "estado": "confirmado"
       },
       "diesel_litros_por_tonelada": {
