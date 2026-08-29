@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "28 ago, 22:32",
+    "ultima_actualizacion": "29 ago, 05:32",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -30,11 +30,11 @@
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": null,
+      "valor": 5011.24,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
-      "valor": 10.96,
+      "valor": 11.36,
       "estado": "confirmado"
     },
     "rendimiento_medio": {
@@ -44,48 +44,11 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 214.86,
+      "valor": 261.5,
       "estado": "estimado"
     }
   },
   "historico_diario": [
-    {
-      "fecha": "22 ago",
-      "toneladas": {
-        "total": {
-          "valor": 0,
-          "estado": "confirmado"
-        },
-        "confirmadas": {
-          "valor": 0,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": null,
-        "estado": "sin_dato"
-      },
-      "sacarosa": {
-        "valor": null,
-        "estado": "sin_dato"
-      },
-      "quintales": {
-        "valor": null,
-        "estado": "sin_dato"
-      }
-    },
     {
       "fecha": "23 ago",
       "toneladas": {
@@ -226,12 +189,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 12.17,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 77.16,
+        "estado": "confirmado"
       }
     },
     {
@@ -263,12 +226,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 12.49,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 20.99,
+        "estado": "confirmado"
       }
     },
     {
@@ -307,12 +270,49 @@
         "valor": null,
         "estado": "sin_dato"
       }
+    },
+    {
+      "fecha": "29 ago",
+      "toneladas": {
+        "total": {
+          "valor": 46.64,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 46.64,
+          "estado": "estimado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": "Lote 10",
+        "estado": "confirmado"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
     }
   ],
   "estado_operativo": {
-    "estado": "alerta",
-    "titulo": "Lloviendo de sur",
-    "detalle": ""
+    "estado": "normal",
+    "titulo": "Operación normal",
+    "detalle": "Sin alertas activas"
   },
   "lotes": {
     "resumen": {
