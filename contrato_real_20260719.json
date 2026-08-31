@@ -30,11 +30,11 @@
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": null,
+      "valor": 5192.75,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
-      "valor": 10.97,
+      "valor": 11.37,
       "estado": "confirmado"
     },
     "rendimiento_medio": {
@@ -115,12 +115,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": 12.17,
-        "estado": "provisional"
+        "valor": 11.83,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
-        "estado": "provisional"
+        "valor": 112.24,
+        "estado": "confirmado"
       }
     },
     {
@@ -152,12 +152,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": 12.49,
-        "estado": "provisional"
+        "valor": 11.8,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
-        "estado": "provisional"
+        "valor": 40.71,
+        "estado": "confirmado"
       }
     },
     {
@@ -226,12 +226,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 12.14,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 117.71,
+        "estado": "confirmado"
       }
     },
     {
@@ -1004,7 +1004,7 @@
   "diesel": {
     "resumen": {
       "diesel_restante_litros": {
-        "valor": 8911.5,
+        "valor": 7649.5,
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
