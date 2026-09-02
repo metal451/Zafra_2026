@@ -1,7 +1,7 @@
 {
   "meta": {
     "zafra": "Bibosi 2026",
-    "ultima_actualizacion": "31 ago, 22:01",
+    "ultima_actualizacion": "1 sep, 22:01",
     "estado_sincronizacion": "ok"
   },
   "indicadores_generales": {
@@ -18,7 +18,7 @@
       "estado": "confirmado"
     },
     "toneladas_estimadas_total": {
-      "valor": 4790.83,
+      "valor": 4809.53,
       "estado": "estimado"
     },
     "toneladas_confirmadas": {
@@ -26,7 +26,7 @@
       "estado": "confirmado"
     },
     "toneladas_por_confirmar": {
-      "valor": 92.09,
+      "valor": 110.79,
       "estado": "estimado"
     },
     "quintales_acumulados": {
@@ -44,7 +44,7 @@
   },
   "resumen_diario": {
     "toneladas_periodo": {
-      "valor": 562.84,
+      "valor": 581.54,
       "estado": "estimado"
     }
   },
@@ -238,16 +238,16 @@
       "fecha": "1 sep",
       "toneladas": {
         "total": {
-          "valor": 0,
-          "estado": "confirmado"
+          "valor": 18.7,
+          "estado": "estimado"
         },
         "confirmadas": {
           "valor": 0,
           "estado": "confirmado"
         },
         "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
+          "valor": 18.7,
+          "estado": "estimado"
         }
       },
       "camiones_cargados": {
@@ -259,8 +259,8 @@
         "estado": "confirmado"
       },
       "lote_grupo": {
-        "valor": null,
-        "estado": "sin_dato"
+        "valor": "Lote 17",
+        "estado": "confirmado"
       },
       "sacarosa": {
         "valor": null,
@@ -322,13 +322,13 @@
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 0,
-        "ha": 0,
+        "cantidad": 1,
+        "ha": 8.8,
         "estado": "confirmado"
       },
       "pendientes": {
-        "cantidad": 3,
-        "ha": 22.13,
+        "cantidad": 2,
+        "ha": 13.33,
         "estado": "confirmado"
       }
     },
@@ -743,18 +743,18 @@
       {
         "id": "Lote 17",
         "variedad": null,
-        "estado_proceso": "pendiente",
+        "estado_proceso": "en_proceso",
         "superficie_ha": {
           "valor": 8.8,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "Pendiente",
-          "estado": "pendiente"
+          "valor": "En proceso",
+          "estado": "en_proceso"
         },
         "fecha_inicio": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "1 sep",
+          "estado": "confirmado"
         },
         "fecha_fin": {
           "valor": null,
@@ -1004,7 +1004,7 @@
   "diesel": {
     "resumen": {
       "diesel_restante_litros": {
-        "valor": 6344.5,
+        "valor": 6240.5,
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
