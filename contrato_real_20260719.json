@@ -30,11 +30,11 @@
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": null,
+      "valor": 5616.89,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
-      "valor": 11.18,
+      "valor": 11.42,
       "estado": "confirmado"
     },
     "rendimiento_medio": {
@@ -82,7 +82,7 @@
         "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
+        "valor": 91.1,
         "estado": "confirmado"
       }
     },
@@ -119,7 +119,7 @@
         "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
+        "valor": 114.02,
         "estado": "confirmado"
       }
     },
@@ -152,12 +152,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": 12.57,
-        "estado": "provisional"
+        "valor": 12.41,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
-        "estado": "provisional"
+        "valor": 281.19,
+        "estado": "confirmado"
       }
     },
     {
@@ -189,12 +189,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 11.93,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 57.39,
+        "estado": "confirmado"
       }
     },
     {
@@ -226,12 +226,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 12.2,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 17.86,
+        "estado": "confirmado"
       }
     },
     {
@@ -1004,15 +1004,15 @@
   "diesel": {
     "resumen": {
       "diesel_restante_litros": {
-        "valor": 7649.5,
+        "valor": 6344.5,
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
-        "valor": 12144,
+        "valor": 13539,
         "estado": "confirmado"
       },
       "diesel_litros_por_tonelada": {
-        "valor": 1.96,
+        "valor": 2.18,
         "estado": "confirmado"
       }
     }
