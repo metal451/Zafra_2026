@@ -6,11 +6,11 @@
   },
   "indicadores_generales": {
     "avance_pct": {
-      "valor": 85.62,
+      "valor": 89.71,
       "estado": "confirmado"
     },
     "ha_cosechadas": {
-      "valor": 110.92,
+      "valor": 116.22,
       "estado": "confirmado"
     },
     "ha_programadas": {
@@ -317,13 +317,13 @@
   "lotes": {
     "resumen": {
       "terminados": {
-        "cantidad": 15,
-        "ha": 110.92,
+        "cantidad": 16,
+        "ha": 116.22,
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 2,
-        "ha": 12.93,
+        "cantidad": 1,
+        "ha": 7.63,
         "estado": "confirmado"
       },
       "pendientes": {
@@ -706,30 +706,30 @@
       {
         "id": "Lote 16",
         "variedad": "MUYURINA, UCG-9020, UCG-9610",
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "provisional",
         "superficie_ha": {
           "valor": 5.3,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "provisional"
         },
         "fecha_inicio": {
           "valor": "17 ago",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "29 ago",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
           "valor": 228.88,
-          "estado": "estimado"
+          "estado": "provisional"
         },
         "rendimiento": {
           "valor": 43.18,
-          "estado": "estimado"
+          "estado": "provisional"
         },
         "consumo_diesel": {
           "valor": null,
