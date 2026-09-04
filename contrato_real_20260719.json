@@ -30,7 +30,7 @@
       "estado": "estimado"
     },
     "quintales_acumulados": {
-      "valor": null,
+      "valor": 6284.26,
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
@@ -82,7 +82,7 @@
         "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
+        "valor": 346,
         "estado": "confirmado"
       }
     },
@@ -119,7 +119,7 @@
         "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
+        "valor": 116.95,
         "estado": "confirmado"
       }
     },
@@ -156,7 +156,7 @@
         "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
+        "valor": 234.54,
         "estado": "confirmado"
       }
     },
@@ -193,7 +193,7 @@
         "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
+        "valor": 105.71,
         "estado": "confirmado"
       }
     },
@@ -230,7 +230,7 @@
         "estado": "confirmado"
       },
       "quintales": {
-        "valor": 0,
+        "valor": 178.61,
         "estado": "confirmado"
       }
     },
