@@ -34,7 +34,7 @@
       "estado": "confirmado"
     },
     "sacarosa_promedio": {
-      "valor": 11.18,
+      "valor": 11.52,
       "estado": "confirmado"
     },
     "rendimiento_medio": {
@@ -152,12 +152,12 @@
         "estado": "confirmado"
       },
       "sacarosa": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 12.7,
+        "estado": "confirmado"
       },
       "quintales": {
-        "valor": null,
-        "estado": "pendiente"
+        "valor": 0,
+        "estado": "confirmado"
       }
     },
     {
