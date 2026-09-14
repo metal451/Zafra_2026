@@ -1004,7 +1004,7 @@
   "diesel": {
     "resumen": {
       "diesel_restante_litros": {
-        "valor": 5186.5,
+        "valor": 5345.5,
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
