@@ -6,11 +6,11 @@
   },
   "indicadores_generales": {
     "avance_pct": {
-      "valor": 95.4,
+      "valor": 100,
       "estado": "confirmado"
     },
     "ha_cosechadas": {
-      "valor": 118.14,
+      "valor": 123.84,
       "estado": "confirmado"
     },
     "ha_programadas": {
@@ -317,13 +317,13 @@
   "lotes": {
     "resumen": {
       "terminados": {
-        "cantidad": 17,
-        "ha": 118.14,
+        "cantidad": 18,
+        "ha": 123.84,
         "estado": "confirmado"
       },
       "en_proceso": {
-        "cantidad": 1,
-        "ha": 5.7,
+        "cantidad": 0,
+        "ha": 0,
         "estado": "confirmado"
       },
       "pendientes": {
@@ -965,30 +965,30 @@
       {
         "id": "Lote 23",
         "variedad": null,
-        "estado_proceso": "en_proceso",
+        "estado_proceso": "confirmado",
         "superficie_ha": {
           "valor": 5.7,
           "estado": "confirmado"
         },
         "estado_carga": {
-          "valor": "En proceso",
-          "estado": "en_proceso"
+          "valor": "Terminado",
+          "estado": "confirmado"
         },
         "fecha_inicio": {
           "valor": "7 sep",
           "estado": "confirmado"
         },
         "fecha_fin": {
-          "valor": null,
-          "estado": "sin_dato"
+          "valor": "8 sep",
+          "estado": "confirmado"
         },
         "toneladas_totales": {
           "valor": 171.78,
-          "estado": "estimado"
+          "estado": "confirmado"
         },
         "rendimiento": {
           "valor": 30.14,
-          "estado": "estimado"
+          "estado": "confirmado"
         },
         "consumo_diesel": {
           "valor": null,
