@@ -50,43 +50,6 @@
   },
   "historico_diario": [
     {
-      "fecha": "23 sep",
-      "toneladas": {
-        "total": {
-          "valor": 0,
-          "estado": "estimado"
-        },
-        "confirmadas": {
-          "valor": 0,
-          "estado": "confirmado"
-        },
-        "por_confirmar": {
-          "valor": 0,
-          "estado": "confirmado"
-        }
-      },
-      "camiones_cargados": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "chatas_cargadas": {
-        "valor": 0,
-        "estado": "confirmado"
-      },
-      "lote_grupo": {
-        "valor": null,
-        "estado": "sin_dato"
-      },
-      "sacarosa": {
-        "valor": null,
-        "estado": "sin_dato"
-      },
-      "quintales": {
-        "valor": null,
-        "estado": "sin_dato"
-      }
-    },
-    {
       "fecha": "24 sep",
       "toneladas": {
         "total": {
@@ -273,6 +236,43 @@
     },
     {
       "fecha": "29 sep",
+      "toneladas": {
+        "total": {
+          "valor": 0,
+          "estado": "estimado"
+        },
+        "confirmadas": {
+          "valor": 0,
+          "estado": "confirmado"
+        },
+        "por_confirmar": {
+          "valor": 0,
+          "estado": "confirmado"
+        }
+      },
+      "camiones_cargados": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "chatas_cargadas": {
+        "valor": 0,
+        "estado": "confirmado"
+      },
+      "lote_grupo": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "sacarosa": {
+        "valor": null,
+        "estado": "sin_dato"
+      },
+      "quintales": {
+        "valor": null,
+        "estado": "sin_dato"
+      }
+    },
+    {
+      "fecha": "30 sep",
       "toneladas": {
         "total": {
           "valor": 0,
@@ -1004,7 +1004,7 @@
   "diesel": {
     "resumen": {
       "diesel_restante_litros": {
-        "valor": 4988.5,
+        "valor": 4862.5,
         "estado": "confirmado"
       },
       "diesel_consumido_acumulado_litros": {
